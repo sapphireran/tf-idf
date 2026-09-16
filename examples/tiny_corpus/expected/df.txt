@@ -1,0 +1,315 @@
+word	#docs it exists in	doc names
+a	5	harbor-cats.txt, kitchen-garden.txt, sourdough-baking.txt, trail-dogs.txt, winter-constellations.txt
+after	1	sourdough-baking.txt
+again	1	sourdough-baking.txt
+against	1	harbor-cats.txt
+almost	1	sourdough-baking.txt
+an	1	sourdough-baking.txt
+and	5	harbor-cats.txt, kitchen-garden.txt, sourdough-baking.txt, trail-dogs.txt, winter-constellations.txt
+another	2	kitchen-garden.txt, sourdough-baking.txt
+answers	2	kitchen-garden.txt, trail-dogs.txt
+appear	1	kitchen-garden.txt
+argue	1	kitchen-garden.txt
+arrive	1	harbor-cats.txt
+as	2	trail-dogs.txt, winter-constellations.txt
+at	3	harbor-cats.txt, kitchen-garden.txt, trail-dogs.txt
+backyard	1	winter-constellations.txt
+bait	1	harbor-cats.txt
+baker	1	sourdough-baking.txt
+bakers	1	kitchen-garden.txt
+baking	1	sourdough-baking.txt
+ball	1	sourdough-baking.txt
+bark	1	trail-dogs.txt
+basil	1	kitchen-garden.txt
+basket	1	kitchen-garden.txt
+be	1	sourdough-baking.txt
+beacon	1	winter-constellations.txt
+beans	1	kitchen-garden.txt
+become	1	sourdough-baking.txt
+becomes	1	sourdough-baking.txt
+bed	1	kitchen-garden.txt
+before	2	sourdough-baking.txt, winter-constellations.txt
+below	1	winter-constellations.txt
+belt	1	winter-constellations.txt
+between	2	harbor-cats.txt, kitchen-garden.txt
+block	1	trail-dogs.txt
+boat	1	harbor-cats.txt
+breadcrumbs	1	sourdough-baking.txt
+brick	1	kitchen-garden.txt
+briefly	1	winter-constellations.txt
+bright	2	trail-dogs.txt, winter-constellations.txt
+burrs	1	trail-dogs.txt
+but	1	kitchen-garden.txt
+by	2	harbor-cats.txt, trail-dogs.txt
+calm	1	harbor-cats.txt
+can	1	kitchen-garden.txt
+canine	1	trail-dogs.txt
+caramel	1	sourdough-baking.txt
+cats	1	harbor-cats.txt
+chews	1	trail-dogs.txt
+chorus	1	trail-dogs.txt
+claim	1	kitchen-garden.txt
+claims	1	harbor-cats.txt
+climb	1	trail-dogs.txt
+clock	1	sourdough-baking.txt
+coil	1	harbor-cats.txt
+cold	1	winter-constellations.txt
+comma	1	harbor-cats.txt
+complete	1	winter-constellations.txt
+compost	1	kitchen-garden.txt
+constellations	1	winter-constellations.txt
+cook	1	kitchen-garden.txt
+cool	1	sourdough-baking.txt
+counter	1	sourdough-baking.txt
+crate	1	harbor-cats.txt
+creak	1	harbor-cats.txt
+crumb	1	sourdough-baking.txt
+crumbs	1	kitchen-garden.txt
+crust	1	sourdough-baking.txt
+curls	1	harbor-cats.txt
+dark	1	winter-constellations.txt
+dawn	1	harbor-cats.txt
+dirt	1	kitchen-garden.txt
+distant	2	trail-dogs.txt, winter-constellations.txt
+dock	1	harbor-cats.txt
+does	1	kitchen-garden.txt
+dog	2	kitchen-garden.txt, trail-dogs.txt
+dogs	1	trail-dogs.txt
+dough	1	sourdough-baking.txt
+dusk	1	kitchen-garden.txt
+dutch	1	sourdough-baking.txt
+early	1	winter-constellations.txt
+emptied	1	kitchen-garden.txt
+entirely	1	trail-dogs.txt
+every	2	harbor-cats.txt, kitchen-garden.txt
+example	1	trail-dogs.txt
+eyes	1	trail-dogs.txt
+feed	2	kitchen-garden.txt, sourdough-baking.txt
+feel	1	winter-constellations.txt
+feet	1	winter-constellations.txt
+feline	1	harbor-cats.txt
+fence	1	kitchen-garden.txt
+fern	1	trail-dogs.txt
+fetch	1	trail-dogs.txt
+finds	1	winter-constellations.txt
+fingernail	1	kitchen-garden.txt
+first	3	harbor-cats.txt, sourdough-baking.txt, trail-dogs.txt
+fishermen	1	harbor-cats.txt
+flour	1	sourdough-baking.txt
+flower	1	kitchen-garden.txt
+foams	1	sourdough-baking.txt
+follows	1	winter-constellations.txt
+for	2	trail-dogs.txt, winter-constellations.txt
+form	1	sourdough-baking.txt
+from	2	kitchen-garden.txt, trail-dogs.txt
+frost	1	winter-constellations.txt
+frozen	1	winter-constellations.txt
+fur	1	harbor-cats.txt
+game	1	trail-dogs.txt
+garden	1	kitchen-garden.txt
+gemini	1	winter-constellations.txt
+gives	1	sourdough-baking.txt
+gluten	1	sourdough-baking.txt
+gray	1	harbor-cats.txt
+gull	1	harbor-cats.txt
+handful	1	kitchen-garden.txt
+harbor	1	harbor-cats.txt
+harvest	1	kitchen-garden.txt
+her	1	harbor-cats.txt
+here	1	trail-dogs.txt
+hikers	1	trail-dogs.txt
+hot	1	sourdough-baking.txt
+hound	1	trail-dogs.txt
+hour	1	winter-constellations.txt
+hours	1	harbor-cats.txt
+hunts	1	harbor-cats.txt
+if	1	trail-dogs.txt
+in	3	kitchen-garden.txt, sourdough-baking.txt, winter-constellations.txt
+into	2	harbor-cats.txt, trail-dogs.txt
+is	2	kitchen-garden.txt, trail-dogs.txt
+it	1	kitchen-garden.txt
+its	1	sourdough-baking.txt
+jar	1	sourdough-baking.txt
+keep	1	harbor-cats.txt
+kitchen	1	kitchen-garden.txt
+knead	1	sourdough-baking.txt
+knows	1	harbor-cats.txt
+lake	1	winter-constellations.txt
+last	3	harbor-cats.txt, kitchen-garden.txt, trail-dogs.txt
+later	1	harbor-cats.txt
+leads	1	trail-dogs.txt
+leaf	1	kitchen-garden.txt
+lean	1	harbor-cats.txt
+leash	1	trail-dogs.txt
+leashfree	1	trail-dogs.txt
+leave	1	harbor-cats.txt
+leftover	2	kitchen-garden.txt, sourdough-baking.txt
+like	2	sourdough-baking.txt, winter-constellations.txt
+live	1	trail-dogs.txt
+loaf	1	sourdough-baking.txt
+logs	1	winter-constellations.txt
+long	1	sourdough-baking.txt
+loud	1	sourdough-baking.txt
+low	1	trail-dogs.txt
+magnitude	1	winter-constellations.txt
+map	1	winter-constellations.txt
+market	1	harbor-cats.txt
+means	1	sourdough-baking.txt
+meteor	1	winter-constellations.txt
+milk	1	harbor-cats.txt
+mint	1	kitchen-garden.txt
+morning	1	sourdough-baking.txt
+moths	1	harbor-cats.txt
+mountain	1	trail-dogs.txt
+much	1	trail-dogs.txt
+mud	1	trail-dogs.txt
+mulch	1	kitchen-garden.txt
+names	1	winter-constellations.txt
+near	1	harbor-cats.txt
+nebula	1	winter-constellations.txt
+neighborhood	2	kitchen-garden.txt, trail-dogs.txt
+news	1	harbor-cats.txt
+night	2	harbor-cats.txt, sourdough-baking.txt
+nights	1	trail-dogs.txt
+no	1	harbor-cats.txt
+nose	1	trail-dogs.txt
+not	3	kitchen-garden.txt, sourdough-baking.txt, trail-dogs.txt
+observer	1	winter-constellations.txt
+of	4	harbor-cats.txt, kitchen-garden.txt, trail-dogs.txt, winter-constellations.txt
+older	2	trail-dogs.txt, winter-constellations.txt
+on	3	harbor-cats.txt, sourdough-baking.txt, trail-dogs.txt
+one	2	harbor-cats.txt, trail-dogs.txt
+open	1	sourdough-baking.txt
+orchard	1	kitchen-garden.txt
+orion	1	winter-constellations.txt
+other	1	harbor-cats.txt
+out	1	trail-dogs.txt
+oven	2	kitchen-garden.txt, sourdough-baking.txt
+over	2	kitchen-garden.txt, winter-constellations.txt
+overnight	1	sourdough-baking.txt
+own	1	harbor-cats.txt
+owns	1	harbor-cats.txt
+pack	1	trail-dogs.txt
+packs	1	winter-constellations.txt
+pale	1	winter-constellations.txt
+path	1	kitchen-garden.txt
+patience	1	trail-dogs.txt
+patrol	1	harbor-cats.txt
+pause	1	trail-dogs.txt
+paw	1	kitchen-garden.txt
+perfume	1	sourdough-baking.txt
+pier	1	harbor-cats.txt
+piling	1	harbor-cats.txt
+planks	1	harbor-cats.txt
+pleased	1	trail-dogs.txt
+plunges	1	trail-dogs.txt
+prints	1	kitchen-garden.txt
+private	1	harbor-cats.txt
+proof	1	sourdough-baking.txt
+purrs	1	harbor-cats.txt
+quiet	2	harbor-cats.txt, winter-constellations.txt
+raccoon	1	trail-dogs.txt
+reading	1	trail-dogs.txt
+reason	2	kitchen-garden.txt, sourdough-baking.txt
+red	1	trail-dogs.txt
+return	1	trail-dogs.txt
+returns	1	winter-constellations.txt
+ridge	1	trail-dogs.txt
+rise	1	winter-constellations.txt
+ritual	1	harbor-cats.txt
+rope	1	harbor-cats.txt
+salt	1	sourdough-baking.txt
+saltscented	1	harbor-cats.txt
+saucer	1	harbor-cats.txt
+says	1	kitchen-garden.txt
+scored	1	sourdough-baking.txt
+scrap	1	harbor-cats.txt
+scratches	1	winter-constellations.txt
+seasonal	1	winter-constellations.txt
+seeing	1	winter-constellations.txt
+shaggy	1	sourdough-baking.txt
+she	1	harbor-cats.txt
+shed	1	harbor-cats.txt
+should	1	sourdough-baking.txt
+shut	1	winter-constellations.txt
+silent	1	harbor-cats.txt
+sirius	1	winter-constellations.txt
+sits	1	kitchen-garden.txt
+sky	1	winter-constellations.txt
+slice	1	sourdough-baking.txt
+small	1	sourdough-baking.txt
+snap	1	trail-dogs.txt
+so	1	trail-dogs.txt
+sour	1	sourdough-baking.txt
+sourdough	1	sourdough-baking.txt
+spills	1	kitchen-garden.txt
+splash	1	trail-dogs.txt
+sprawl	1	trail-dogs.txt
+spring	1	kitchen-garden.txt
+stamps	1	winter-constellations.txt
+stands	2	kitchen-garden.txt, winter-constellations.txt
+stars	2	kitchen-garden.txt, winter-constellations.txt
+starter	1	sourdough-baking.txt
+starts	1	sourdough-baking.txt
+steady	1	winter-constellations.txt
+steals	1	harbor-cats.txt
+steam	1	sourdough-baking.txt
+steep	1	trail-dogs.txt
+stick	1	trail-dogs.txt
+still	2	kitchen-garden.txt, trail-dogs.txt
+stone	1	trail-dogs.txt
+summit	1	trail-dogs.txt
+sunwarmed	1	harbor-cats.txt
+switchbacks	1	trail-dogs.txt
+sword	1	winter-constellations.txt
+system	1	sourdough-baking.txt
+tabby	1	harbor-cats.txt
+taurus	1	winter-constellations.txt
+taut	1	sourdough-baking.txt
+teach	1	trail-dogs.txt
+telescope	1	winter-constellations.txt
+than	1	winter-constellations.txt
+that	1	harbor-cats.txt
+the	5	harbor-cats.txt, kitchen-garden.txt, sourdough-baking.txt, trail-dogs.txt, winter-constellations.txt
+them	2	harbor-cats.txt, winter-constellations.txt
+then	4	harbor-cats.txt, sourdough-baking.txt, trail-dogs.txt, winter-constellations.txt
+three	1	winter-constellations.txt
+thrown	1	trail-dogs.txt
+thumbprint	1	winter-constellations.txt
+thyme	1	kitchen-garden.txt
+tides	1	harbor-cats.txt
+to	4	harbor-cats.txt, kitchen-garden.txt, sourdough-baking.txt, winter-constellations.txt
+toast	1	sourdough-baking.txt
+tomato	1	kitchen-garden.txt
+tongues	1	trail-dogs.txt
+too	1	sourdough-baking.txt
+town	1	winter-constellations.txt
+trade	1	harbor-cats.txt
+trail	2	kitchen-garden.txt, trail-dogs.txt
+tripod	1	winter-constellations.txt
+triumphant	1	trail-dogs.txt
+trotting	1	trail-dogs.txt
+turns	1	trail-dogs.txt
+under	1	kitchen-garden.txt
+vines	1	kitchen-garden.txt
+visited	1	kitchen-garden.txt
+vocation	1	trail-dogs.txt
+waits	1	winter-constellations.txt
+wall	1	kitchen-garden.txt
+warm	3	harbor-cats.txt, kitchen-garden.txt, trail-dogs.txt
+washes	1	harbor-cats.txt
+watch	1	harbor-cats.txt
+watches	1	sourdough-baking.txt
+water	1	sourdough-baking.txt
+watering	1	kitchen-garden.txt
+weather	2	kitchen-garden.txt, sourdough-baking.txt
+welds	1	winter-constellations.txt
+were	1	trail-dogs.txt
+when	1	trail-dogs.txt
+while	2	kitchen-garden.txt, trail-dogs.txt
+whiskers	1	harbor-cats.txt
+wind	1	trail-dogs.txt
+windows	1	sourdough-baking.txt
+winter	1	winter-constellations.txt
+with	4	harbor-cats.txt, kitchen-garden.txt, trail-dogs.txt, winter-constellations.txt
+younger	1	trail-dogs.txt

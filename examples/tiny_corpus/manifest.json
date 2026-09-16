@@ -1,0 +1,39 @@
+{
+  "title": "Tiny original tf-idf corpus",
+  "purpose": "Personal teaching collection. Five short original essays, not Gutenberg extracts.",
+  "n_documents": 5,
+  "variant": "repo",
+  "formula": {
+    "tf": "count / document_length",
+    "idf": "ln(N / df)",
+    "tfidf": "tf * idf"
+  },
+  "documents": [
+    {
+      "file": "harbor-cats.txt",
+      "topic": "harbor cats on a night pier",
+      "expected_signal": ["cats", "tabby", "harbor", "feline"]
+    },
+    {
+      "file": "trail-dogs.txt",
+      "topic": "trail dogs on a hike",
+      "expected_signal": ["dogs", "leash", "trail", "canine"]
+    },
+    {
+      "file": "sourdough-baking.txt",
+      "topic": "sourdough baking",
+      "expected_signal": ["starter", "crust", "dough", "baking"]
+    },
+    {
+      "file": "winter-constellations.txt",
+      "topic": "winter constellations and a backyard telescope",
+      "expected_signal": ["telescope", "orion", "constellations", "nebula"]
+    },
+    {
+      "file": "kitchen-garden.txt",
+      "topic": "kitchen garden beside an oven wall",
+      "expected_signal": ["garden", "basil", "mint", "harvest"],
+      "notes": "Bridge document: mentions baker, dog, and stars on purpose."
+    }
+  ]
+}

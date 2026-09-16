@@ -1,0 +1,62 @@
+variant: repo
+documents: 5
+vocabulary: 314
+
+Top TF-IDF terms per document
+  harbor-cats.txt (111 tokens)
+    cats             0.057998
+    harbor           0.028999
+    owns             0.028999
+    tabby            0.028999
+    every            0.024765
+    against          0.014499
+    arrive           0.014499
+    bait             0.014499
+
+  kitchen-garden.txt (108 tokens)
+    garden           0.104315
+    another          0.025453
+    is               0.016968
+    over             0.016968
+    appear           0.014902
+    argue            0.014902
+    bakers           0.014902
+    basil            0.014902
+
+  sourdough-baking.txt (95 tokens)
+    baking           0.033883
+    crust            0.033883
+    starter          0.033883
+    after            0.016941
+    again            0.016941
+    almost           0.016941
+    an               0.016941
+    baker            0.016941
+
+  trail-dogs.txt (122 tokens)
+    dogs             0.065961
+    leash            0.026384
+    return           0.026384
+    trail            0.022532
+    as               0.015021
+    for              0.015021
+    bark             0.013192
+    block            0.013192
+
+  winter-constellations.txt (95 tokens)
+    observer         0.033883
+    orion            0.033883
+    telescope        0.033883
+    stars            0.019290
+    backyard         0.016941
+    beacon           0.016941
+    below            0.016941
+    belt             0.016941
+
+Pairwise cosine similarity (TF-IDF vectors)
+                harbor-cats.tx kitchen-garden sourdough-baki trail-dogs.txt winter-constel
+harbor-cats.tx          1.000          0.020          0.008          0.019          0.012
+kitchen-garden          0.020          1.000          0.035          0.042          0.025
+sourdough-baki          0.008          0.035          1.000          0.004          0.013
+trail-dogs.txt          0.019          0.042          0.004          1.000          0.031
+winter-constel          0.012          0.025          0.013          0.031          1.000
