@@ -1,0 +1,52 @@
+N = 5 documents
+vocabulary = 73 terms
+
+=== garden.txt ===
+  roses     0.309507
+  at        0.123803
+  gardener  0.123803
+  bees      0.061901
+  bloomed   0.061901
+  by        0.061901
+  fence     0.061901
+  need      0.061901
+
+=== harbor.txt ===
+  boat     0.160944
+  fog      0.107296
+  harbor   0.107296
+  pier     0.107296
+  sailor   0.107296
+  against  0.053648
+  bells    0.053648
+  drift    0.053648
+
+=== kitchen.txt ===
+  soup   0.259587
+  cook   0.155752
+  added  0.051917
+  and    0.051917
+  from   0.051917
+  needs  0.051917
+  rose   0.051917
+  salt   0.051917
+
+=== stars.txt ===
+  hill       0.185704
+  night      0.123803
+  stars      0.123803
+  telescope  0.123803
+  above      0.061901
+  cluster    0.061901
+  faint      0.061901
+  flared     0.061901
+
+=== workshop.txt ===
+  oak        0.193133
+  carpenter  0.128755
+  shelf      0.128755
+  became     0.064378
+  bench      0.064378
+  board      0.064378
+  covered    0.064378
+  felt       0.064378

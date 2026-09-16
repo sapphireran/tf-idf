@@ -1,0 +1,15 @@
+a	0.04
+became	0.04
+bench	0.04
+board	0.04
+carpenter	0.08
+covered	0.04
+felt	0.04
+oak	0.12
+planed	0.04
+sanded	0.04
+sawdust	0.04
+shelf	0.08
+smooth	0.04
+the	0.28
+until	0.04
