@@ -1,0 +1,179 @@
+== austen-emma.txt
+  emma       0.01043215
+  harriet    0.00712652
+  weston     0.00698034
+  knightley  0.00613977
+  elton      0.00579258
+  mr         0.00417682
+  fairfax    0.00367290
+  woodhouse  0.00365334
+
+== austen-persuasion.txt
+  elliot      0.00881264
+  wentworth   0.00662683
+  anne        0.00586844
+  musgrove    0.00385119
+  russell     0.00311225
+  mrs         0.00283266
+  charles     0.00276236
+  uppercross  0.00267155
+
+== austen-sense.txt
+  elinor      0.01503248
+  marianne    0.00906064
+  dashwood    0.00544867
+  jennings    0.00493785
+  mrs         0.00358970
+  willoughby  0.00325444
+  lucy        0.00290310
+  brandon     0.00282163
+
+== bible-kjv.txt
+  unto    0.01203732
+  israel  0.00400130
+  saith   0.00337692
+  thee    0.00229466
+  david   0.00220607
+  judah   0.00217279
+  thou    0.00216940
+  hath    0.00191113
+
+== blake-poems.txt
+  thel   0.00558059
+  weep   0.00395706
+  lyca   0.00297631
+  thee   0.00266238
+  vales  0.00174240
+  oer    0.00169692
+  har    0.00148816
+  thou   0.00146606
+
+== bryant-stories.txt
+  margery      0.00374595
+  jackal       0.00370191
+  brahmin      0.00208826
+  epaminondas  0.00199784
+  nightingale  0.00193511
+  halfchick    0.00162324
+  tailor       0.00152695
+  david        0.00143198
+
+== burgess-busterbrown.txt
+  buster     0.04035360
+  browns     0.01093017
+  joe        0.01021573
+  blacky     0.00927042
+  billy      0.00708915
+  otter      0.00563411
+  sammy      0.00538908
+  chatterer  0.00527142
+
+== carroll-alice.txt
+  alice        0.02595678
+  gryphon      0.00454724
+  dormouse     0.00424159
+  duchess      0.00424159
+  hatter       0.00370811
+  turtle       0.00316934
+  caterpillar  0.00182035
+  rabbit       0.00177756
+
+== chesterton-ball.txt
+  turnbull   0.01795064
+  macian     0.01462251
+  evan       0.00460273
+  turnbulls  0.00127460
+  ebook      0.00095595
+  police     0.00088436
+  madeleine  0.00084973
+  have       0.00083974
+
+== chesterton-brown.txt
+  flambeau   0.00488587
+  boulnois   0.00194641
+  muscari    0.00178751
+  fanshaw    0.00131084
+  brown      0.00125224
+  hirsch     0.00107251
+  seymour    0.00107251
+  todhunter  0.00107251
+
+== chesterton-thursday.txt
+  syme        0.02435426
+  gregory     0.00390763
+  professor   0.00322910
+  marquis     0.00294447
+  secretary   0.00201092
+  gogol       0.00174672
+  anarchists  0.00164691
+  symes       0.00159700
+
+== edgeworth-parents.txt
+  cecilia  0.00267825
+  susan    0.00258742
+  piedro   0.00243477
+  jem      0.00193043
+  leonora  0.00179130
+  archer   0.00178964
+  hal      0.00173912
+  mr       0.00161980
+
+== melville-moby_dick.txt
+  whale     0.00494343
+  ahab      0.00432161
+  sperm     0.00325827
+  stubb     0.00309467
+  queequeg  0.00287655
+  whales    0.00275966
+  starbuck  0.00230396
+  pequod    0.00164958
+
+== milton-paradise.txt
+  thee    0.00220407
+  thou    0.00176239
+  heaven  0.00144010
+  thy     0.00130433
+  eve     0.00116033
+  th      0.00114014
+  adam    0.00111297
+  hath    0.00098192
+
+== shakespeare-caesar.txt
+  bru      0.02082145
+  brutus   0.01665583
+  cassi    0.01456141
+  haue     0.01240118
+  cassius  0.01156747
+  antony   0.00775893
+  caesar   0.00725443
+  caes     0.00530743
+
+== shakespeare-hamlet.txt
+  ham    0.01407528
+  haue   0.01022394
+  hor    0.00680610
+  qu     0.00584313
+  laer   0.00565464
+  ophe   0.00527767
+  pol    0.00461796
+  rosin  0.00405250
+
+== shakespeare-macbeth.txt
+  macb     0.02155585
+  haue     0.01189955
+  macbeth  0.00975520
+  macd     0.00912583
+  rosse    0.00770976
+  vpon     0.00565716
+  vs       0.00536455
+  banquo   0.00534963
+
+== whitman-leaves.txt
+  o         0.00183313
+  thee      0.00098738
+  poems     0.00085301
+  pioneers  0.00077285
+  states    0.00077224
+  passd     0.00076189
+  chant     0.00072992
+  cities    0.00064460

@@ -1,0 +1,11 @@
+word 	 #docs it exists in 	 doc names
+bake	1	d3-bread.txt, 
+bakers	1	d3-bread.txt, 
+bread	1	d3-bread.txt, 
+cat	1	d1-cat.txt, 
+dog	1	d2-dog.txt, 
+log	1	d2-dog.txt, 
+mat	1	d1-cat.txt, 
+on	2	d1-cat.txt, d2-dog.txt, 
+sat	2	d1-cat.txt, d2-dog.txt, 
+the	2	d1-cat.txt, d2-dog.txt, 
