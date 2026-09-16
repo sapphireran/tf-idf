@@ -1,0 +1,18 @@
+# Local Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*~
+
+# Scratch output from the example scripts
+/tmp/
+examples/_scratch/
