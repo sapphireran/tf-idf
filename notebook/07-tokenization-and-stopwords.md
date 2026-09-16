@@ -39,12 +39,16 @@ I do **not** apply the stoplist when I am trying to reproduce the
 ## Shakespeare crumbs
 
 Opening `output/tfidf/shakespeare-macbeth.txt` shows terms like
-`1murth` and `2murth`. Those are not vocabulary I want to study; they
-are what you get when a play file contains marked-up murder-scene
-stage directions and the Perl class of legal characters is
-`[a-zA-Z0-9]`. I leave them in the historical tables and ignore them
-in narrative top-term lists (`--alpha-only` drops tokens that contain
-a digit).
+`1murth` and `2murth`. Those are Perl-tokenizer leftovers (digits
+glued to stripped stage-direction text). The `simple` tokenizer
+splits digit runs from letter runs, so those exact strings do not
+appear in `python3 -m tfidf top --doc gutenberg/shakespeare-macbeth.txt`.
+What *does* appear is the same kind of junk in a different font:
+speech prefixes (`macb`, `macd`) and Early Modern spellings
+(`haue`, `vpon`) with high IDF because Austen does not share them.
+
+`--alpha-only` drops tokens that contain a digit. It does not drop
+`macb`. A modern English stoplist does not drop `haue`.
 
 ## Apostrophes, again
 
