@@ -1,0 +1,44 @@
+word	#docs it exists in	doc names
+a	4	castle-ghost.txt, market-day.txt, tea-garden.txt, whale-ship.txt
+across	1	whale-ship.txt
+and	2	castle-ghost.txt, market-day.txt
+at	1	castle-ghost.txt
+beside	1	tea-garden.txt
+bought	1	market-day.txt
+bread	1	market-day.txt
+castle	1	castle-ghost.txt
+cold	1	castle-ghost.txt
+cup	1	tea-garden.txt
+did	1	market-day.txt
+drank	1	tea-garden.txt
+drifted	1	castle-ghost.txt
+followed	1	whale-ship.txt
+for	1	market-day.txt
+garden	1	tea-garden.txt
+gate	1	castle-ghost.txt
+ghost	1	castle-ghost.txt
+go	1	market-day.txt
+haunted	1	castle-ghost.txt
+hot	1	tea-garden.txt
+huge	1	whale-ship.txt
+in	2	tea-garden.txt, whale-ship.txt
+left	1	market-day.txt
+market	1	market-day.txt
+night	1	castle-ghost.txt
+not	1	market-day.txt
+of	2	market-day.txt, tea-garden.txt
+opened	1	castle-ghost.txt
+past	1	castle-ghost.txt
+prince	2	castle-ghost.txt, market-day.txt
+rabbit	2	market-day.txt, tea-garden.txt
+sat	1	tea-garden.txt
+saw	1	castle-ghost.txt
+sea	2	market-day.txt, whale-ship.txt
+second	1	tea-garden.txt
+ship	2	market-day.txt, whale-ship.txt
+sold	1	market-day.txt
+swam	1	whale-ship.txt
+tea	2	market-day.txt, tea-garden.txt
+the	4	castle-ghost.txt, market-day.txt, tea-garden.txt, whale-ship.txt
+was	2	tea-garden.txt, whale-ship.txt
+whale	1	whale-ship.txt

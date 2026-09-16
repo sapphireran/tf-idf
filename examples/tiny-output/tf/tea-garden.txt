@@ -1,0 +1,14 @@
+a	0.05
+beside	0.05
+cup	0.05
+drank	0.05
+garden	0.05
+hot	0.05
+in	0.05
+of	0.05
+rabbit	0.1
+sat	0.05
+second	0.05
+tea	0.15
+the	0.2
+was	0.05
