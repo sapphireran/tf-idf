@@ -1,3 +1,10 @@
+# Tokenize gutenberg/ and write per-book tf plus corpus df / idf.
+#
+# Personal 2012 toy. Pipeline, formula, and the $#files caveat:
+#   docs/pipeline-and-scripts.md
+#   docs/formula-and-implementation-notes.md
+# Prefer examples/python/tfidf_toy.py when you want N = number of books.
+
 use strict;
 
 opendir(DIR,"gutenberg");
