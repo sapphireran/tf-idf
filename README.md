@@ -72,12 +72,13 @@ Highest tf-idf terms from the committed tables (stopwords already sit at 0):
 
 | Document | Distinctive terms |
 | --- | --- |
-| `carroll-alice.txt` | alice, turtle, hatter, gryphon, dormouse |
-| `shakespeare-macbeth.txt` | macbeth, macduff, banquo, thane, duncan |
-| `melville-moby_dick.txt` | whale, ahab, sperm, pequod, nantucket |
-| `milton-paradise.txt` | heaven, satan, hell, thee, thou |
+| `carroll-alice.txt` | alice, gryphon, dormouse, duchess, hatter |
+| `shakespeare-macbeth.txt` | macb, haue, macbeth, macd, rosse |
+| `melville-moby_dick.txt` | whale, ahab, sperm, stubb, queequeg |
+| `austen-emma.txt` | emma, harriet, weston, knightley, elton |
+| `milton-paradise.txt` | thee, thou, heaven, thy, eve |
 
-A longer reading of these tables is in [docs/interpreting-results.md](docs/interpreting-results.md).
+Shakespeare ranks **speech prefixes** (`macb`, `ham`, `bru`) and **old spelling** (`haue`, `vpon`) above most plot words. That is the tokenizer being literal, not a failure of idf. Details are in [docs/interpreting-results.md](docs/interpreting-results.md).
 
 ## Documentation map
 
@@ -87,7 +88,8 @@ A longer reading of these tables is in [docs/interpreting-results.md](docs/inter
 4. [How to read `output/`](docs/interpreting-results.md)
 5. [Quirks worth knowing before you trust a ranking](docs/known-quirks.md)
 6. [Line-by-line script notes](docs/script-reference.md)
-7. [Examples and the toy corpus](examples/README.md)
+7. [Formula variants (sklearn, BM25, cosine)](docs/formula-variants.md)
+8. [Examples and the toy corpus](examples/README.md)
 
 ## License notes
 

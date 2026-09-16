@@ -11,6 +11,7 @@ They are written so you can reconstruct the 2012 experiment from the code that i
 | [corpus.md](corpus.md) | Title, author, and size of every file under `gutenberg/` |
 | [interpreting-results.md](interpreting-results.md) | How to read tf, df, idf, and tf-idf; real numbers from Alice, Macbeth, and Moby-Dick |
 | [known-quirks.md](known-quirks.md) | Tokenization, empty tokens, `$#files` vs \(N\), scientific-notation `sort`, stopwords |
+| [formula-variants.md](formula-variants.md) | This repo vs log-tf, smooth idf, sklearn, and cosine |
 | [script-reference.md](script-reference.md) | Walkthrough of `tf-idf-values.pl` and `tf*idf-product.pl` |
 
 Worked numbers on a four-document corpus, plus helper scripts, are under [`../examples/`](../examples/README.md).

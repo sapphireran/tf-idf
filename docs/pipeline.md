@@ -77,7 +77,7 @@ One global weight per term. `0` means “appears in every document.”
 
 ```text
 word 	 #docs it exists in 	 doc names
-alice	3	carroll-alice.txt, blake-poems.txt, ...
+alice	3	carroll-alice.txt, chesterton-thursday.txt, edgeworth-parents.txt
 ```
 
 The filename list is the supporting evidence for the df integer. It is unordered (hash key order from the original Perl run).

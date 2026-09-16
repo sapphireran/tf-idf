@@ -10,48 +10,54 @@ Do not use `sort -k2` without telling `sort` to use general numeric mode (`-g`).
 
 ## Alice in Wonderland
 
-From `output/tfidf/carroll-alice.txt` and the matching tf / idf rows:
+From `output/tfidf/carroll-alice.txt` (ranked with `examples/top_terms.py`):
 
-| term | tf (Alice) | idf | tf-idf |
+| rank | term | tf-idf |
+| --- | --- | --- |
+| 1 | alice | 0.02596 |
+| 2 | gryphon | 0.00455 |
+| 3–4 | dormouse, duchess | 0.00424 |
+| 5 | hatter | 0.00371 |
+| 6 | turtle | 0.00317 |
+| 8 | rabbit | 0.00178 |
+| — | wonderland | 0.00025 |
+| — | the | **0** |
+
+`alice` wins because it is frequent *and* only appears in three of the 18 files — Wonderland plus stray given-name hits in *The Man Who Was Thursday* and *The Parent’s Assistant* (`idf = ln(18/3) = ln 6 ≈ 1.792`). `examples/term_report.py alice` shows the other two tf-idf scores are two orders of magnitude smaller. `wonderland` is a perfect identifier in spirit but almost does not occur in the body (the title header is most of its count), so tf-idf stays small. `the` is the most common token and the worst possible identifier.
+
+`rabbit` is less rare across English prose than `gryphon`, so a fairly common word loses to a rarer creature. `alices` (rank 9) is the possessive after the apostrophe is stripped — a tokenizer split, not a second character.
+
+## Macbeth (and the other plays)
+
+The committed *Macbeth* table does **not** open on “witches / scotland / dagger.” It opens on the play’s printed voice:
+
+| rank | term | tf-idf | What it actually is |
 | --- | --- | --- | --- |
-| alice | 0.01449 | 1.79176 | **0.02596** |
-| turtle | (low) | high | 0.00566 |
-| hatter | … | high | 0.00371 |
-| gryphon | … | ~ln(18) | 0.00455 |
-| dormouse | … | high | 0.00424 |
-| rabbit | … | medium | 0.00178 |
-| wonderland | tiny | high | 0.00025 |
-| the | ~0.05 | **0** | **0** |
+| 1 | macb | 0.02156 | speech prefix for Macbeth |
+| 2 | haue | 0.01190 | old spelling of *have* |
+| 3 | macbeth | 0.00976 | the name, in full |
+| 4 | macd | 0.00913 | speech prefix for Macduff |
+| 5 | rosse | 0.00771 | Ross, old spelling |
+| 8 | banquo | 0.00535 | the thane |
+| 11 | thane | 0.00393 | the title |
 
-`alice` wins because it is frequent *and* only appears in three of the 18 files (`idf = ln(18/3) = ln 6 ≈ 1.792`). `wonderland` is a perfect identifier in spirit but almost does not occur in the body (the title header is most of its count), so tf-idf stays small. `the` is the most common token and the worst possible identifier.
+Hamlet and Caesar do the same thing: `ham` / `hor` / `laer` and `bru` / `cassi` / `caes` outrank most vocabulary. These Gutenberg files are **old-spelling dramatic texts**. Speaker labels repeat on every speech, so their tf is enormous, and the abbreviations are unique to that play, so their idf is enormous too. idf is doing its job; the bag of words includes stage machinery.
 
-`rabbit` is less rare across English prose than `gryphon`, so a fairly common word loses to a rarer creature.
+Shared Early Modern spellings (`haue`, `vpon`, `vs`, `selfe`, `loue`) still score well because this pocket corpus only has three such plays plus Milton and the KJV — not enough witnesses to drive those idfs to zero.
 
-## Macbeth
-
-| term | tf-idf |
-| --- | --- |
-| macbeth | 0.00976 |
-| thane | 0.00393 |
-| banquo | 0.00535 |
-| duncan | 0.00157 |
-| macduff | 0.00142 |
-| witches | 0.00078 |
-
-The play identifies itself with its cast. Shared Shakespearean function words (`thou`, `thee`, `lord`) are discounted because Hamlet and Caesar (and Milton, and the KJV) also use them.
-
-`macbeth` has `idf = ln(18) ≈ 2.890` — it is unique to this file in the pocket corpus. That is an artifact of collection design, not a linguistic law. Add *Macbeth* criticism or another edition and the idf drops.
+`macbeth` as a full word has `idf = ln(18) ≈ 2.890` (unique in this collection). That is an artifact of collection design, not a linguistic law.
 
 ## Moby-Dick
 
-| term | tf-idf | idf note |
-| --- | --- | --- |
-| whale | 0.00494 | idf ≈ 1.099 = ln(3) → six files mention `whale` |
-| ahab | 0.00432 | rarer name |
-| sperm | 0.00326 | sperm whale |
-| pequod | 0.00165 | unique ship name, lower tf |
-| nantucket | 0.00130 | place name |
-| ishmael | 0.00019 | famous, but not frequent in the token stream |
+| rank | term | tf-idf | note |
+| --- | --- | --- | --- |
+| 1 | whale | 0.00494 | idf ≈ 1.099 = ln(3) → six files mention it |
+| 2 | ahab | 0.00432 | rarer name, slightly lower tf |
+| 3 | sperm | 0.00326 | sperm whale |
+| 4–5 | stubb, queequeg | 0.00309 / 0.00288 | crew |
+| 8 | pequod | 0.00165 | unique ship name, lower tf |
+| 9 | nantucket | 0.00130 | place name |
+| — | ishmael | 0.00019 | famous, but not frequent in the token stream |
 
 `whale` outranks `ahab` on tf-idf even though `ahab` is the more “plot-specific” name, because Melville says `whale` constantly. idf only *reweights*; it does not replace frequency. `ishmael` is a reminder that cultural salience and tf-idf are different things — the narrator names himself rarely.
 
@@ -63,13 +69,18 @@ The play identifies itself with its cast. Shared Shakespearean function words (`
 - terms that score highly in A but not B
 - terms that score highly in B but not A
 
-Alice vs Macbeth is almost disjoint on the top 20: `alice`/`hatter`/`gryphon` versus `macbeth`/`banquo`/`thane`. That is the method working. Alice vs Bryant’s children’s stories will share more ordinary words (`little`, `said`-adjacent leftovers after idf) and is a better stress test.
+Alice vs Macbeth is disjoint on the top 12: `alice`/`gryphon`/`hatter` versus `macb`/`haue`/`banquo`. That is the method working. Alice vs Bryant’s children’s stories will share more ordinary words and is a better stress test.
+
+Novels with stable proper names look “clean” (*Emma*: emma, harriet, knightley; *Thursday*: syme, gregory, gogol). Lyric and scripture look “pronominal” (*Paradise Lost* and the KJV both elevate `thee`/`thou`/`unto`) because those words are frequent and this collection is not uniformly Early Modern.
+
+Pairwise **cosine** on the same vectors is in `examples/cosine_similarity.py`. Shakespeare plays cluster because they share old spelling; Milton sits near the KJV for `thee`/`thou`. That geometry is documented in [formula-variants.md](formula-variants.md) and [`../examples/reading-sample-sessions.md`](../examples/reading-sample-sessions.md).
 
 ## When a high score is a footnote
 
 - **OCR / join artifacts.** `themand` in Alice is almost certainly an em-dash or comma disappearing between `them` and `and`. High idf (unique typo) × tiny tf can still sneak into a mid-list if you rank naively.
 - **Numerals.** `1865`, verse numbers in the KJV, and `1`, `2`, `3` from chapter headings all get scores. They are rarely meaningful.
-- **Speaker labels in plays.** `macbeth` is both character and speech prefix. tf is inflated by the script format. That is legitimate for *identifying the file*; it is misleading if you wanted “themes of the play.”
+- **Speaker labels in plays.** `macb`, `ham`, `bru` are prefixes printed before every speech. They dominate tf-idf because they are both frequent and file-unique. Legitimate for *identifying the file*; misleading if you wanted “themes of the play.”
+- **Old spelling.** `haue`, `vpon`, `rosse`, `selfe` are not OCR errors. These editions keep Early Modern orthography. A modernized Shakespeare would rerank toward `macbeth` / `brutus` / `horatio`.
 - **Author leakage.** Three Chesterton files mean Chestertonian favorites have depressed idf. A word that would look “rare” in a mixed-century corpus looks ordinary here.
 
 ## Zero means “useless in this collection”

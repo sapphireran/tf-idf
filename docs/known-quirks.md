@@ -2,6 +2,12 @@
 
 This is a 2012 teaching toy. The quirks below are part of the lesson: a ranking is only as honest as the tokenizer, the collection size, and the sort you use to read it.
 
+## Dramatic texts are bags of speech prefixes
+
+The three Shakespeare files use abbreviated speaker tags (`Macb.`, `Ham.`, `Bru.`). After punctuation stripping those become `macb`, `ham`, `bru`. They occur once per speech, they are unique to that file, and they therefore sweep the top of the tf-idf table. Rank *Macbeth* with `examples/top_terms.py` before assuming the distinctive words are `witches` and `dagger`.
+
+The same editions keep `u`/`v` and `ou` spellings (`haue`, `vpon`, `loue`, `selfe`). Those tokens do not merge with `have` / `upon` / `love` / `self`.
+
 ## Tokenization is a blunt regex
 
 From `tf-idf-values.pl`:
