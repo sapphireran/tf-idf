@@ -91,6 +91,8 @@ The calculator writes `examples/tiny-corpus/output/` in the same tf / df / idf /
 
 ## Documentation
 
+Reading order is in [docs/README.md](docs/README.md).
+
 1. [docs/tf-idf-explained.md](docs/tf-idf-explained.md) — intuition, formulas, and what the scores are *not*.
 2. [examples/hand-calculation.md](examples/hand-calculation.md) — three documents, every count, no shortcuts.
 3. [docs/pipeline.md](docs/pipeline.md) — line-level tour of the two Perl scripts, including the \(N\) quirk.
