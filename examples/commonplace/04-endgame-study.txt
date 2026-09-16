@@ -1,0 +1,16 @@
+# Rook endgame on the kitchen table
+
+I keep a cheap vinyl board next to the kettle and replay Lucena and Philidor
+until the coffee cools. Endgame study is the only part of chess that still
+feels like carpentry: corresponding squares, opposition, the short side, the
+long side, and the moment the defender is in zugzwang.
+
+Lucena wants a bridge. The checking rook swings to the fourth rank, the king
+steps out, and the pawn queens because the bridge takes the checks. Philidor
+wants a third-rank cut and a patient wait until the pawn advances too far.
+I still mix them up when I am tired.
+
+Last week I spent forty minutes on a corresponding-squares problem that
+looked like a plumbing diagram. No opening trap, no brilliancy prize. Just
+the slow geometry that decides whether a single pawn is a win or a walk
+home in the rain.
