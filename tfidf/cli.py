@@ -246,7 +246,7 @@ def build_parser() -> argparse.ArgumentParser:
         p.add_argument("--stopwords", action="store_true")
         p.add_argument("--idf", default="classic", choices=("classic", "smooth", "probabilistic", "bm25"))
         p.add_argument("--tf", default="normalized", choices=("raw", "normalized", "log", "boolean", "bm25"))
-        p.add_argument("-k", type=int, default=10)
+        p.add_argument("-k", "--k", type=int, default=10)
 
     top = sub.add_parser("top", help="highest-weighted terms in one document")
     top.add_argument("--doc", required=True, help="path or document name")
@@ -278,7 +278,7 @@ def build_parser() -> argparse.ArgumentParser:
     tokens = sub.add_parser("tokens", help="preview tokenization of a file")
     tokens.add_argument("--doc", required=True)
     tokens.add_argument("--tokenizer", default="simple", choices=("simple", "perl_legacy"))
-    tokens.add_argument("-k", type=int, default=40)
+    tokens.add_argument("-k", "--k", type=int, default=40)
     tokens.set_defaults(func=cmd_tokens)
 
     return parser

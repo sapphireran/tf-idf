@@ -62,7 +62,7 @@ class IdfTests(unittest.TestCase):
     def test_bm25_positive_on_collection_term(self) -> None:
         value = idf(18, 18, "bm25")
         self.assertGreater(value, 0.0)
-        self.assertAlmostEqual(value, math.log(0.5 / 18.5) + 1.0)
+        self.assertAlmostEqual(value, math.log(1.0 + 0.5 / 18.5))
 
     def test_rejects_df_above_n(self) -> None:
         with self.assertRaises(ValueError):

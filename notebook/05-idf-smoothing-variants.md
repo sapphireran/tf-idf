@@ -72,11 +72,11 @@ notebook choice, not a theorem.
 
 ## `bm25`
 
-Robertson–Sparck Jones style, with the `+1` Lucene-ish floor that
-keeps the value positive:
+Robertson–Sparck Jones IDF can go negative when \(n_t\) is large.
+The lab uses the Lucene-style rewrite that stays positive:
 
 \[
-\mathrm{idf}_{\mathrm{bm25}}(t) = \log \frac{N - n_t + 0.5}{n_t + 0.5} + 1
+\mathrm{idf}_{\mathrm{bm25}}(t) = \log\left(1 + \frac{N - n_t + 0.5}{n_t + 0.5}\right)
 \]
 
 Paired with the usual TF saturation (see `tfidf/weights.py`):

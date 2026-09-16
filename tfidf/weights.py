@@ -79,7 +79,10 @@ def idf(
             return 0.0
         return math.log((n_docs - df) / df)
     if flavor == "bm25":
-        return math.log((n_docs - df + 0.5) / (df + 0.5)) + 1.0
+        # Lucene-style: log(1 + (N - df + 0.5)/(df + 0.5)) stays positive
+        # even when df == N. The RSJ form without the inner +1 can go
+        # negative on majority-shelf terms.
+        return math.log(1.0 + (n_docs - df + 0.5) / (df + 0.5))
     raise ValueError(f"unknown idf flavor: {flavor!r}")
 
 
