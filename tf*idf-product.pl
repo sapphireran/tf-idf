@@ -1,3 +1,7 @@
+#!/usr/bin/env perl
+# Historical 2012 script: output/tfidf/<file> = tf * idf.
+# The filename contains a star; run as:  perl 'tf*idf-product.pl'
+# Requires Text::CSV_XS. See docs/perl-pipeline.md.
 use strict;
 use Text::CSV_XS;
 my $csv = Text::CSV_XS->new({sep_char => "\t"});

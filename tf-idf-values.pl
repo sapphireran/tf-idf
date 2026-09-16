@@ -1,3 +1,7 @@
+#!/usr/bin/env perl
+# Historical 2012 script: tokenize gutenberg/ and write output/tf, df, idf.
+# Paths are hardcoded. Document count uses $#files (see docs/perl-pipeline.md).
+# Prefer examples/perl/compute_tf_idf.pl or examples/python/tfidf.py for new runs.
 use strict;
 
 opendir(DIR,"gutenberg");
