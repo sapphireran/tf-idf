@@ -124,6 +124,17 @@ This writes the same four artifact types under `output_py/`. The original
 python3 -m tfidf_toy diff-output --left output --right output_py
 ```
 
+On a fresh `compute` of this checkout, **idf.txt matches exactly** (max
+absolute delta 0) and every document’s **top-30 tf-idf terms overlap
+30/30** with the Perl tables. Remaining per-term deltas are small
+(typically 1e-6 to 1e-4) and come from:
+
+- empty leading split fields counted in Perl’s `|d|` (see
+  [`tokenization.md`](tokenization.md)); pass `--match-perl-length` to
+  close most of that gap
+- latin-1 bytes in `shakespeare-caesar.txt` (largest max|Δ| in the
+  comparison, still far below a rank change in the top 30)
+
 Small floating-point and empty-token-length differences are expected
 unless you pass `--match-perl-length`. Rankings of the top few dozen
 terms should match.
