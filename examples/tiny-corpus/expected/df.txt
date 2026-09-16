@@ -1,0 +1,84 @@
+word	#docs it exists in	doc names
+a	4	bread.txt, cats.txt, garden.txt, stars.txt
+after	1	stars.txt
+and	3	bread.txt, cats.txt, garden.txt
+another	2	cats.txt, stars.txt
+as	1	garden.txt
+at	1	stars.txt
+baker	1	bread.txt
+basil	1	garden.txt
+board	1	bread.txt
+bowl	1	bread.txt
+bread	1	bread.txt
+by	1	cats.txt
+cage	1	garden.txt
+cat	1	cats.txt
+climb	1	garden.txt
+cools	1	bread.txt
+crosses	1	stars.txt
+crust	1	bread.txt
+dark	1	stars.txt
+dough	1	bread.txt
+fades	1	stars.txt
+faint	1	stars.txt
+feeds	1	bread.txt
+finds	1	stars.txt
+finish	1	garden.txt
+for	2	cats.txt, stars.txt
+fresh	1	bread.txt
+glass	1	cats.txt
+goes	1	garden.txt
+hill	1	stars.txt
+hot	1	bread.txt
+i	2	garden.txt, stars.txt
+in	1	bread.txt
+into	1	bread.txt
+leaps	1	cats.txt
+likes	1	garden.txt
+loaf	1	bread.txt
+meteor	1	stars.txt
+miso	1	cats.txt
+misses	1	cats.txt
+more	1	garden.txt
+moth	1	cats.txt
+near	1	stars.txt
+nebula	1	stars.txt
+on	4	bread.txt, cats.txt, garden.txt, stars.txt
+oven	1	bread.txt
+paw	1	cats.txt
+pinch	1	garden.txt
+rings	1	stars.txt
+ripe	1	garden.txt
+rises	1	bread.txt
+salad	1	garden.txt
+same	1	garden.txt
+sandwich	1	garden.txt
+saturn	1	stars.txt
+scores	1	bread.txt
+second	1	garden.txt
+set	1	stars.txt
+shadow	1	cats.txt
+shapes	1	bread.txt
+shows	1	stars.txt
+sill	1	cats.txt
+sky	1	stars.txt
+slides	1	bread.txt
+soil	1	garden.txt
+starter	1	bread.txt
+suckers	1	garden.txt
+sun	1	garden.txt
+taps	1	cats.txt
+telescope	1	stars.txt
+the	4	bread.txt, cats.txt, garden.txt, stars.txt
+then	1	cats.txt
+tomato	1	garden.txt
+torn	1	garden.txt
+vines	1	garden.txt
+wait	1	stars.txt
+waits	2	bread.txt, cats.txt
+warm	1	bread.txt
+washes	1	cats.txt
+watches	1	cats.txt
+water	1	garden.txt
+while	1	stars.txt
+window	1	cats.txt
