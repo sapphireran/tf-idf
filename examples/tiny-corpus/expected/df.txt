@@ -1,0 +1,13 @@
+word	#docs it exists in	doc names
+birds	1	birds.txt,
+cats	2	cats.txt, dogs.txt,
+chase	3	birds.txt, cats.txt, dogs.txt,
+dogs	1	dogs.txt,
+fly	1	birds.txt,
+insects	1	birds.txt,
+mats	2	cats.txt, dogs.txt,
+mice	1	cats.txt,
+on	2	cats.txt, dogs.txt,
+over	1	birds.txt,
+sit	2	cats.txt, dogs.txt,
+trees	1	birds.txt,
