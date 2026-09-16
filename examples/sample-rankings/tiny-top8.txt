@@ -1,0 +1,29 @@
+== baking.txt
+  dough    0.07989908
+  bread    0.05992431
+  flour    0.05992431
+  ovens    0.05992431
+  bake     0.03994954
+  morning  0.03994954
+  warm     0.03994954
+  all      0.01997477
+
+== cats.txt
+  purr      0.05403011
+  cat       0.03602008
+  cats      0.03602008
+  sofa      0.03602008
+  whiskers  0.03602008
+  yarn      0.03602008
+  accident  0.01801004
+  floor     0.01801004
+
+== dogs.txt
+  bark        0.05682477
+  dog         0.03788318
+  dogs        0.03788318
+  ears        0.03788318
+  garden      0.03788318
+  yard        0.03788318
+  floppy      0.01894159
+  invitation  0.01894159
