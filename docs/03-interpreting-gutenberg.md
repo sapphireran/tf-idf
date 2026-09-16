@@ -88,7 +88,7 @@ the animal.
 | vs | 0.005365 | *us* |
 | banquo | 0.005350 | |
 | lenox | 0.004406 | Lennox |
-| thane | 0.003934 | |
+| mal | 0.003934 | Malcolm's prefix; ties `thane` |
 
 The play's "top terms" are mostly **line attributions and
 orthography**. That is a correct TF-IDF answer and a bad book
@@ -132,7 +132,7 @@ Smallest file, so a single repeated name moves the score a lot.
 | vales | 0.001742 |
 | oer | 0.001697 |
 | har | 0.001488 |
-| lamb | 0.001461 |
+| thou | 0.001466 |
 
 `thel` and `lyca` are proper names from *The Book of Thel* and
 "The Little Girl Lost". `weep` / `weeping` / `lamb` are the
