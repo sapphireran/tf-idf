@@ -1,0 +1,18 @@
+# Local Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editor / OS noise
+.DS_Store
+*.swp
+*~
+
+# Generated example runs (committed Gutenberg output/ stays tracked)
+/examples/**/output/
+/tmp-tfidf-out/
