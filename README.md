@@ -107,6 +107,7 @@ sentences instead of 18 books.
 | [`docs/worked-example.md`](docs/worked-example.md) | every arithmetic step on 3 documents |
 | [`docs/gutenberg-results.md`](docs/gutenberg-results.md) | how to read the 18-book top lists |
 | [`examples/tiny_corpus/`](examples/tiny_corpus/) | the 3 source files plus a README |
+| [`examples/compare_austen.md`](examples/compare_austen.md) | pairwise contrast of two novels on the same shelf |
 
 ## Python CLI sketch
 
