@@ -22,5 +22,6 @@ These pages describe the pipeline in this repository, not a generic textbook cha
 ## Code examples
 
 - [../examples/README.md](../examples/README.md) — tiny corpus plus Python helpers.
+- [further-experiments.md](further-experiments.md) — copy Alice, split the KJV, smooth IDF.
 
 The Python files are teaching copies. They are meant to be read next to the Perl, not to replace a production indexer.

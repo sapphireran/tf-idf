@@ -121,9 +121,10 @@ The committed Gutenberg IDF table was produced with `N = 18` (one per `.txt` in 
 | [docs/pipeline.md](docs/pipeline.md) | How the two Perl scripts connect |
 | [docs/corpus.md](docs/corpus.md) | The 18 Gutenberg files |
 | [docs/output-formats.md](docs/output-formats.md) | TSV layouts |
-| [docs/interpreting-results.md](docs/interpreting-results.md) | Reading ranked terms |
-| [docs/known-quirks.md](docs/known-quirks.md) | N, speaker tags, spelling |
-| [examples/README.md](examples/README.md) | Toy corpus and Python examples |
+| [docs/interpreting-results.md](docs/interpreting-results.md) | Ranked terms from the 18-book run |
+| [docs/known-quirks.md](docs/known-quirks.md) | N, speaker tags, spelling, DF overlaps |
+| [examples/README.md](examples/README.md) | Toy corpus, excerpts, and Python examples |
+| [docs/further-experiments.md](docs/further-experiments.md) | Personal follow-up runs |
 
 ## License and sources
 
