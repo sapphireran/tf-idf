@@ -1,3 +1,9 @@
+# Multiply each output/tf/<book> row by the matching output/idf.txt weight.
+#
+# Personal 2012 toy. Needs Text::CSV_XS. Same product without that module:
+#   examples/python/tfidf_toy.py
+# File formats: docs/pipeline-and-scripts.md
+
 use strict;
 use Text::CSV_XS;
 my $csv = Text::CSV_XS->new({sep_char => "\t"});
