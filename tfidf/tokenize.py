@@ -94,18 +94,23 @@ def tokenize_document(
     return tokens, denominator
 
 
-def iter_corpus_files(input_dir: str | Path) -> list[Path]:
-    """List non-hidden files in ``input_dir``, sorted by name.
+def iter_corpus_files(
+    input_dir: str | Path,
+    pattern: str = "*.txt",
+) -> list[Path]:
+    """List non-hidden files in ``input_dir`` matching ``pattern``.
 
-    Hidden names (``.`` prefix) are skipped, matching the Perl
-    ``$f !~ /^\\./`` guard. Directories are skipped.
+    The default ``*.txt`` keeps README.md and other notes out of the
+    corpus (the tiny-corpus folder ships a README next to the four
+    documents). Hidden names are skipped, matching the Perl
+    ``$f !~ /^\\./`` guard.
     """
     root = Path(input_dir)
     if not root.is_dir():
         raise FileNotFoundError(f"corpus directory not found: {root}")
     files = [
         path
-        for path in root.iterdir()
+        for path in root.glob(pattern)
         if path.is_file() and not path.name.startswith(".")
     ]
     return sorted(files, key=lambda path: path.name)

@@ -62,6 +62,16 @@ python3 -m tfidf similar gutenberg
 `similar` on 18 long files builds 18-choose-2 = 153 cosines. That is
 fine. The expensive part is the first tokenization of `bible-kjv.txt`.
 
+## Only ``*.txt`` by default
+
+`examples/tiny-corpus/` and `examples/hand-calculation/` keep a README
+beside the documents. The CLI only reads `*.txt` unless you pass
+another glob:
+
+```bash
+python3 -m tfidf report examples/tiny-corpus --glob '*'
+```
+
 ## Perl-compat denominator
 
 ```bash

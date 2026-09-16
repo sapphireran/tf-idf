@@ -55,8 +55,11 @@ idf(t) = ln(N / df(t))
 `mat` wins because it is unique to A. `the` is more frequent inside A but
 appears in two documents, so IDF cuts it down.
 
-The same pattern makes `log` the top term of B and `played` (tied with `a`
-and `and` on frequency, unique to C) a top term of C.
+The same pattern makes `log` the top term of B. Document C is the useful
+counter-example: `a` occurs twice and only in C, so it outranks `played`
+even though `played` is the "content" word. Raw TF-IDF has no stopword
+list. If you want `played` to win, you have to stop repeating `a`, or
+filter function words yourself.
 
 ## Run it
 

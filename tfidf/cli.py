@@ -23,6 +23,12 @@ def _add_index_flags(parser: argparse.ArgumentParser) -> None:
         action="store_true",
         help="count leading empty split fields in the TF denominator",
     )
+    parser.add_argument(
+        "--glob",
+        default="*.txt",
+        dest="pattern",
+        help="file glob inside input_dir (default: *.txt, so README.md is skipped)",
+    )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -81,6 +87,7 @@ def _index_from_args(args: argparse.Namespace):
         args.input_dir,
         idf_mode=args.idf,
         perl_compat=args.perl_compat,
+        pattern=args.pattern,
     )
 
 

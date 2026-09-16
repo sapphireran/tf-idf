@@ -17,4 +17,6 @@ class HandCorpusFileTests(unittest.TestCase):
         self.assertAlmostEqual(doc_a.tfidf["mat"], (1 / 6) * math.log(3))
         self.assertEqual(doc_a.top_terms(1)[0][0], "mat")
         self.assertEqual(index.document("doc-b.txt").top_terms(1)[0][0], "log")
-        self.assertEqual(index.document("doc-c.txt").top_terms(1)[0][0], "played")
+        # "a" occurs twice in C and nowhere else, so it outranks "played".
+        # TF-IDF has no stopword list; repeated unique tokens win on TF.
+        self.assertEqual(index.document("doc-c.txt").top_terms(1)[0][0], "a")

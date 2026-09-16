@@ -76,9 +76,10 @@ def build_index(
     *,
     idf_mode: IdfMode = "raw",
     perl_compat: bool = False,
+    pattern: str = "*.txt",
 ) -> TfidfIndex:
-    """Compute TF-IDF for every non-hidden file in ``input_dir``."""
-    files = iter_corpus_files(input_dir)
+    """Compute TF-IDF for every non-hidden file in ``input_dir`` matching ``pattern``."""
+    files = iter_corpus_files(input_dir, pattern=pattern)
     if not files:
         raise ValueError(f"no documents found in {input_dir}")
 

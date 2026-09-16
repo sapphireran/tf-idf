@@ -83,7 +83,9 @@ tests/                # unittest coverage of the math and examples
 | `python3 -m tfidf similar DIR` | pairwise cosine |
 
 `--idf raw|smooth` switches formulas. `--perl-compat` copies the Perl
-TF denominator (leading empty split fields). See the cookbook.
+TF denominator (leading empty split fields). Input dirs are filtered to
+`*.txt` so a README sitting next to the documents is not scored. See
+the cookbook.
 
 ## What this is not
 

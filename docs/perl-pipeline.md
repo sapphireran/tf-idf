@@ -120,6 +120,8 @@ is not used by either script.
 
 ## File names that start with a dot
 
-Both Perl scripts skip `^\..*`. That is why `.DS_Store` is not a document
-and why a stray `.bak` would also be ignored. The Python helper
-`iter_corpus_files` copies that rule.
+Both Perl scripts skip `^\..*` and then process every remaining name.
+That is why `.DS_Store` is not a document and why a stray `.bak` would
+be treated as one. The Python helper `iter_corpus_files` skips hidden
+names too, and additionally defaults to `*.txt` so a README sitting
+next to an example corpus is not scored.

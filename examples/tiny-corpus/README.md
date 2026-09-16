@@ -15,6 +15,9 @@ Shared English (`the`, `and`, `i`, `a`) appears in every note. With raw IDF
 those terms get `log(4/4) = 0` and disappear from the ranking. That is the
 whole demonstration.
 
+This `README.md` is not part of the corpus. `python3 -m tfidf` only reads
+`*.txt` unless you pass `--glob`.
+
 ## Commands
 
 ```bash

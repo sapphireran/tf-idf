@@ -21,8 +21,11 @@ class IdfTests(unittest.TestCase):
 
     def test_smooth_idf_stays_positive_when_term_is_everywhere(self):
         value = idf_value(18, 18, "smooth")
-        self.assertGreater(value, 1.0)
+        # log((N+1)/(df+1)) + 1 == 1 when the term is in every document.
+        # Raw IDF would be 0 here; the extra +1 is the whole point of smoothing.
+        self.assertAlmostEqual(value, 1.0)
         self.assertAlmostEqual(value, math.log(19 / 19) + 1.0)
+        self.assertGreater(value, 0.0)
 
 
 class HandCalculationTests(unittest.TestCase):
@@ -69,6 +72,14 @@ class HandCalculationTests(unittest.TestCase):
 
 class TinyCorpusTests(unittest.TestCase):
     CORPUS = Path(__file__).resolve().parents[1] / "examples" / "tiny-corpus"
+
+    def test_readme_is_not_treated_as_a_document(self):
+        index = build_index(self.CORPUS)
+        self.assertEqual(
+            [doc.name for doc in index.documents],
+            ["cats.txt", "harbor.txt", "jupiter.txt", "sourdough.txt"],
+        )
+        self.assertEqual(index.n_documents, 4)
 
     def test_distinctive_headwords_win(self):
         index = build_index(self.CORPUS)
