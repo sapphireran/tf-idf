@@ -23,9 +23,9 @@ $word_count++;
 if($d ne "") { $tf{$d}++; ... }
 ```
 
-Perl `split(/ +/, " alice")` yields `("", "alice")`. The empty field is not a token, but it is a count. Any line that still has a leading space after whitespace collapse slightly lowers every `tf` in that book.
+Perl `split(/ +/, " alice")` yields `("", "alice")`. The empty field is not a token, but it is a count. Any line that still has a leading space after whitespace collapse slightly lowers every `tf` in that book. Trailing empties are discarded, and a line that is only spaces does not increment the count.
 
-The Python tokenizer exposes this as `count_empty_tokens=True` (compat mode) versus `False` (clean mode). The tiny-corpus walkthrough uses clean mode because those three files have no leading spaces.
+The Python tokenizer exposes this as `count_empty_tokens=True` (compat mode) versus `False` (clean mode). Compat mode is what matches `output/tf/carroll-alice.txt`. The tiny-corpus walkthrough uses clean mode because those three files have no leading spaces.
 
 ## 3. Apostrophes vanish, so `Alice's` ≠ `alice`
 

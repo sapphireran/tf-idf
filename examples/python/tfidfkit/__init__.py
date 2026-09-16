@@ -11,7 +11,13 @@ from .tables import (
     write_df,
     write_token_weights,
 )
-from .tokenize import TokenStats, normalize_line, tokenize_document, tokenize_text
+from .tokenize import (
+    TokenStats,
+    normalize_line,
+    split_perl_spaces,
+    tokenize_document,
+    tokenize_text,
+)
 from .weights import (
     PipelineResult,
     compute_idf,
@@ -31,6 +37,7 @@ __all__ = [
     "cosine",
     "dot",
     "normalize_line",
+    "split_perl_spaces",
     "parse_idf_value",
     "query_vector",
     "rank_neighbors",

@@ -8,9 +8,11 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from tests.support import OUTPUT
+from tests.support import GUTENBERG, OUTPUT
 from tfidfkit.similarity import cosine, query_vector
 from tfidfkit.tables import load_committed, parse_idf_value
+from tfidfkit.tokenize import tokenize_document
+from tfidfkit.weights import run_pipeline
 
 
 class ParseIdfValueTests(unittest.TestCase):
@@ -92,6 +94,22 @@ class CommittedSnapshotTests(unittest.TestCase):
         self.assertEqual(ranked[0][0], "melville-moby_dick.txt")
         self.assertGreater(ranked[0][1], 0.4)
         self.assertGreater(ranked[0][1], ranked[1][1] * 10)
+
+    def test_compat_tokenizer_matches_alice_denominator(self) -> None:
+        stats = tokenize_document(
+            GUTENBERG / "carroll-alice.txt", count_empty_tokens=True
+        )
+        alice_tf = self.tables.tf["carroll-alice.txt"]["alice"]
+        inferred_n = stats.counts["alice"] / alice_tf
+        self.assertAlmostEqual(stats.token_count, inferred_n, places=6)
+
+    def test_compat_pipeline_matches_committed_alice_tf(self) -> None:
+        result = run_pipeline(GUTENBERG, count_empty_tokens=True)
+        snap = self.tables.tf["carroll-alice.txt"]
+        recomputed = result.tf["carroll-alice.txt"]
+        self.assertEqual(set(recomputed), set(snap))
+        for token, value in snap.items():
+            self.assertAlmostEqual(recomputed[token], value, places=12)
 
 
 if __name__ == "__main__":

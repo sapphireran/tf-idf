@@ -8,7 +8,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from tests.support import PYTHON_EXAMPLES  # noqa: F401  # installs tfidfkit path
-from tfidfkit.tokenize import normalize_line, tokenize_text
+from tfidfkit.tokenize import normalize_line, split_perl_spaces, tokenize_text
 
 
 class NormalizeLineTests(unittest.TestCase):
@@ -47,6 +47,21 @@ class TokenizeTextTests(unittest.TestCase):
     def test_blank_lines_do_not_count(self) -> None:
         stats = tokenize_text("cats\n\n\nsit\n")
         self.assertEqual(stats.token_count, 2)
+
+    def test_whitespace_only_line_matches_perl_empty_split(self) -> None:
+        self.assertEqual(split_perl_spaces(" "), [])
+        stats = tokenize_text("cats\n   \nsit\n", count_empty_tokens=True)
+        self.assertEqual(stats.token_count, 2)
+
+    def test_double_spaces_from_punctuation_do_not_create_empty_tokens(self) -> None:
+        # "hello, world" -> collapse -> strip comma -> "hello  world"
+        stats = tokenize_text("hello, world\n", count_empty_tokens=True)
+        self.assertEqual(stats.token_count, 2)
+        self.assertEqual(dict(stats.counts), {"hello": 1, "world": 1})
+
+    def test_trailing_space_does_not_inflate_compat_denominator(self) -> None:
+        stats = tokenize_text("hello \n", count_empty_tokens=True)
+        self.assertEqual(stats.token_count, 1)
 
 
 if __name__ == "__main__":

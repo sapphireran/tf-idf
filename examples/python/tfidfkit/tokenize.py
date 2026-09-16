@@ -22,6 +22,7 @@ import re
 
 _WHITESPACE_RUN = re.compile(r"\s+")
 _KEEP = re.compile(r"[^a-zA-Z0-9\s]")
+_SPACES = re.compile(r" +")
 
 
 def normalize_line(line: str) -> str:
@@ -33,15 +34,30 @@ def normalize_line(line: str) -> str:
     return text
 
 
+def split_perl_spaces(line: str) -> list[str]:
+    """Match Perl ``split(/ +/, $txt)``, including trailing-empty stripping.
+
+    Punctuation deletion can leave two spaces in a row (``hello, world`` is
+    collapsed, then the comma disappears). Perl's ``/ +/`` split does not
+    emit an empty field for that gap. A whitespace-only line becomes ``" "``
+    after collapse and splits to an empty list, not to empty fields.
+    Leading empty fields are kept: ``" alice"`` yields ``["", "alice"]``.
+    """
+    if line == "" or line.isspace():
+        return []
+    parts = _SPACES.split(line)
+    while parts and parts[-1] == "":
+        parts.pop()
+    return parts
+
+
 def tokenize_text(text: str, *, count_empty_tokens: bool = False) -> TokenStats:
     """Tokenize a whole document already loaded as a string."""
     counts: Counter[str] = Counter()
     denominator = 0
     for raw_line in text.splitlines(keepends=True):
         line = normalize_line(raw_line)
-        if line == "":
-            continue
-        parts = line.split(" ")
+        parts = split_perl_spaces(line)
         for part in parts:
             if part == "":
                 if count_empty_tokens:

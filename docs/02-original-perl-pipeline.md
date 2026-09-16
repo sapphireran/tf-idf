@@ -47,6 +47,8 @@ Two details hide here.
 
 **Empty tokens count toward `$word_count`.** `split(/ +/, " hello")` in Perl returns `("", "hello")`. The empty string is not added to `%tf`, but it still increments the denominator used for `tf = count / word_count`. Leading spaces after whitespace collapse therefore slightly shrink every `tf` in that document.
 
+Perl's default `split` also drops trailing empty fields and treats a whitespace-only line as an empty list. Deleting punctuation after collapsing spaces can leave `hello  world`; `/ +/` does not invent a token in the gap. The Python `--compat-empty-tokens` path copies that split, so Alice's TF denominator matches the committed snapshot (`26576`).
+
 **Document frequency is a set.** `$df{$d}{$f}=1` records "token `d` occurs in file `f`." Later, `keys %{ $df{$t} }` is the posting list.
 
 ### Normalized TF output
