@@ -13,4 +13,4 @@ Read these in order if you are new to the repo:
 | 5 | [document-vectors-and-similarity.md](document-vectors-and-similarity.md) | You want cosine similarity on the same weights |
 | 6 | [formula-and-implementation-notes.md](formula-and-implementation-notes.md) | You want the `$#files` / empty-token / corrupt-line caveats |
 
-Runnable counterparts live under [`../examples/`](../examples/README.md).
+Runnable counterparts live under [`../examples/`](../examples/README.md). Measured Gutenberg cosines are in [`../examples/gutenberg-similarity.md`](../examples/gutenberg-similarity.md).

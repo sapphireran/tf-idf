@@ -5,6 +5,7 @@ Personal, self-contained companions to the 2012 Gutenberg `tf * idf` toy. Nothin
 | Path | What you do with it |
 | --- | --- |
 | [`tiny-corpus/`](tiny-corpus/) | Four nine-token notes plus a pencil-and-paper walkthrough of every weight |
+| [`gutenberg-similarity.md`](gutenberg-similarity.md) | Measured cosines and top-10 overlap vs the committed tables |
 | [`python/tfidf_toy.py`](python/tfidf_toy.py) | Recompute `tf` / `df` / `idf` / `tf * idf` with \(N=\) number of files actually read |
 | [`python/rank_terms.py`](python/rank_terms.py) | Sort a table (committed or freshly written) by weight |
 | [`python/similar_docs.py`](python/similar_docs.py) | Cosine similarity on those weights |

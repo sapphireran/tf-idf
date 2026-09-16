@@ -56,16 +56,32 @@ python3 examples/python/similar_docs.py --table-dir examples/tiny-corpus/output/
 
 Numeric expectations are in [`../examples/tiny-corpus/expected-results.md`](../examples/tiny-corpus/expected-results.md).
 
-## Gutenberg-scale intuition
+## Gutenberg-scale measurements
 
-On the 18 books, cosine usually groups:
+Recomputed with `tfidf_toy.py` on `gutenberg/` (\(N=18\), empties not counted). Cosine on the published `output/tfidf/` tables is the same story with slightly smaller weights.
 
-- the three Austen novels
-- the three Shakespeare plays (shared Folio spelling: `haue`, `vpon`, `selfe`, `exeunt`)
-- the three Chesterton books
-- *Paradise Lost* with the King James Bible (shared early-modern / biblical diction)
+**Highest pairs** (direction, not plot):
 
-*Alice* stays relatively far from everything: its top weights (`gryphon`, `dormouse`, `hatter`) barely appear elsewhere. *Moby-Dick* is pulled a little toward any book that says `whale` or `ship`, but Ahab's crew names keep it distinct.
+| cosine | pair | what is actually overlapping |
+| ---: | --- | --- |
+| 0.308 | *Hamlet* × *Macbeth* | Folio spelling (`haue`, `vpon`, `selfe`) plus play layout |
+| 0.265 | *Paradise Lost* × *Leaves of Grass* | lyric `thee` / `thou` / `o` / `thy` |
+| 0.253 | *Julius Caesar* × *Hamlet* | same Shakespeare / Folio cluster |
+| 0.226 | *Julius Caesar* × *Macbeth* | same |
+| 0.224 | Blake × Milton | short lyric + early-modern diction |
+| 0.205 | King James Bible × Milton | biblical / early-modern diction |
+
+**Author groups are not automatic.** Distinctive *names* are almost orthogonal across books by the same person, so cosine recovers shared *leftover style tokens*, not “this is also Austen”.
+
+| group | within-group cosines | closer to someone else? |
+| --- | --- | --- |
+| Shakespeare (3 plays) | 0.226 – 0.308 | no — this is the tightest cluster |
+| Austen (3 novels) | 0.067 – 0.088 | *Emma* is closer to Edgeworth (0.101) than to *Sense* (0.067) |
+| Chesterton (3 books) | 0.022 – 0.052 | *The Innocence of Father Brown* is closer to Edgeworth (0.099) than to *Thursday* (0.051) |
+
+*Emma* vs *Sense and Sensibility* is modest because `emma` / `harriet` / `knightley` and `elinor` / `marianne` / `dashwood` are different dimensions. The leftover shared novel vocabulary (`mr`, `mrs`, and a few verbs) is a much weaker signal than `haue` is for two Folio plays.
+
+*Alice* is far from the rest of the collection (best match ≈ 0.030, against Father Brown / Edgeworth). Its top weights (`gryphon`, `dormouse`, `hatter`) barely exist elsewhere. *Moby-Dick* has a mild pull toward Whitman (0.126) and Milton (0.098) from sea / biblical diction, but Ahab's crew keeps it from joining any tight cluster.
 
 Run:
 
@@ -73,6 +89,8 @@ Run:
 python3 examples/python/tfidf_toy.py gutenberg --write-dir /tmp/gutenberg-tfidf
 python3 examples/python/similar_docs.py --table-dir /tmp/gutenberg-tfidf/tfidf --top-pairs 15
 ```
+
+A copy of these numbers (and the same-author table) lives in [`../examples/gutenberg-similarity.md`](../examples/gutenberg-similarity.md).
 
 Or compare two committed tables without recomputing IDF:
 

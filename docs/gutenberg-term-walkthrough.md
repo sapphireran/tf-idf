@@ -150,7 +150,7 @@ The poem's *characters* (`eve`, `adam`, `satan`) do appear, but they lose a lot 
 
 A clean cast-and-plot list. `syme` is the Alice / Ahab pattern again: a rare name used constantly.
 
-Chesterton also contributes `chesterton-brown.txt` and `chesterton-ball.txt`. Similarity among those three should be higher than, say, Brown vs. Blake, because of shared vocabulary (`said`, but more usefully `anarchist`, `priest`, Chesterton's function-word mix). Check with `similar_docs.py`.
+Chesterton also contributes `chesterton-brown.txt` and `chesterton-ball.txt`. Those three do **not** form a tight cosine cluster (about 0.02–0.05). Each book's top weights are a different cast (`syme` vs `flambeau` vs `turnbull` / `macian`), so the vectors point different ways. Shared Chesterton diction is weaker than the Folio-spelling glue that holds the Shakespeare plays together. See [document-vectors-and-similarity.md](document-vectors-and-similarity.md).
 
 ## William Blake — `blake-poems.txt`
 
