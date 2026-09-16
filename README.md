@@ -81,7 +81,9 @@ No third-party Python packages. From the repository root:
 ```bash
 python3 examples/tiny-corpus/compute_tfidf.py
 python3 examples/tiny-corpus/compute_tfidf.py --explain tea
+python3 examples/tiny-corpus/compute_tfidf.py --stop --no-write --n 6
 python3 examples/top_terms.py --path examples/tiny-corpus/output/tfidf --n 8
+python3 examples/top_terms.py --files carroll-alice.txt --n 10
 python3 -m unittest discover -s tests -v
 ```
 
