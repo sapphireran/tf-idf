@@ -1,0 +1,40 @@
+Processed 4 documents from examples/toy-corpus
+N (processed documents) = 4
+Vocabulary size         = 197
+
+=== bakery.txt  (tokens=91, unique=56) ===
+  rye               tf= 0.04396  idf= 1.38629  tfidf= 0.06094
+  baker             tf= 0.03297  idf= 1.38629  tfidf= 0.04570
+  loaves            tf= 0.03297  idf= 1.38629  tfidf= 0.04570
+  sourdough         tf= 0.03297  idf= 1.38629  tfidf= 0.04570
+  bench             tf= 0.02198  idf= 1.38629  tfidf= 0.03047
+  cooled            tf= 0.02198  idf= 1.38629  tfidf= 0.03047
+
+=== cats.txt  (tokens=100, unique=59) ===
+  cat               tf= 0.05000  idf= 1.38629  tfidf= 0.06931
+  lantern           tf= 0.04000  idf= 1.38629  tfidf= 0.05545
+  calico            tf= 0.03000  idf= 1.38629  tfidf= 0.04159
+  hedge             tf= 0.03000  idf= 1.38629  tfidf= 0.04159
+  miso              tf= 0.03000  idf= 1.38629  tfidf= 0.04159
+  moth              tf= 0.03000  idf= 1.38629  tfidf= 0.04159
+
+=== harbor.txt  (tokens=95, unique=65) ===
+  schooner          tf= 0.03158  idf= 1.38629  tfidf= 0.04378
+  crew              tf= 0.02105  idf= 1.38629  tfidf= 0.02919
+  harbor            tf= 0.02105  idf= 1.38629  tfidf= 0.02919
+  kelp              tf= 0.02105  idf= 1.38629  tfidf= 0.02919
+  lighthouse        tf= 0.02105  idf= 1.38629  tfidf= 0.02919
+  tide              tf= 0.02105  idf= 1.38629  tfidf= 0.02919
+
+=== observatory.txt  (tokens=94, unique=55) ===
+  comet             tf= 0.04255  idf= 1.38629  tfidf= 0.05899
+  nebula            tf= 0.04255  idf= 1.38629  tfidf= 0.05899
+  dome              tf= 0.03191  idf= 1.38629  tfidf= 0.04424
+  telescope         tf= 0.03191  idf= 1.38629  tfidf= 0.04424
+  astronomer        tf= 0.02128  idf= 1.38629  tfidf= 0.02950
+  clear             tf= 0.02128  idf= 1.38629  tfidf= 0.02950
+
+Wrote examples/toy-output/tf/
+Wrote examples/toy-output/tfidf/
+Wrote examples/toy-output/df.txt
+Wrote examples/toy-output/idf.txt

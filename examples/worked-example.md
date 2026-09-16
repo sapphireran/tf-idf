@@ -86,13 +86,15 @@ A word that is unique to one file and appears only once scores `1.386294 / word_
 
 These ranks are what `toy-tfidf.pl --top 6` should print:
 
-**cats.txt** — cat, lantern, then the five-way tie moths / moth / miso / hedge / calico.
+Ties break alphabetically, which is what `toy-tfidf.pl` and `top-terms.pl` print.
 
-**harbor.txt** — schooner (3), then tide / lighthouse / kelp / harbor / crew (2 each).
+**cats.txt** — cat, lantern, then calico / hedge / miso / moth / moths (3 each).
 
-**bakery.txt** — rye (4), then sourdough / loaves / baker (3 each).
+**harbor.txt** — schooner (3), then crew / harbor / kelp / lighthouse / tide (2 each).
 
-**observatory.txt** — nebula and comet (4 each), then telescope and dome (3 each).
+**bakery.txt** — rye (4), then baker / loaves / sourdough (3 each).
+
+**observatory.txt** — comet and nebula (4 each), then dome and telescope (3 each).
 
 If a rerun disagrees, check that you pointed `--corpus` at `examples/toy-corpus` and that no extra files landed in that directory (extra files change `N` and every IDF).
 

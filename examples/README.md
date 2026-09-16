@@ -15,7 +15,7 @@ perl examples/lookup-term.pl --df examples/toy-output/df.txt \
     cat the wind schooner rye comet
 ```
 
-`toy-tfidf.pl` rebuilds `examples/toy-output/` each run. The hand math is in [worked-example.md](worked-example.md).
+`toy-tfidf.pl` rebuilds `examples/toy-output/` each run. A committed copy of that tree and captured stdout live under [sample-runs/](sample-runs/) and `toy-output/`. The hand math is in [worked-example.md](worked-example.md).
 
 | Script | Role |
 | --- | --- |

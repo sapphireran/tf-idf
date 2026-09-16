@@ -18,7 +18,7 @@ perl examples/top-terms.pl --n 10 output/tfidf/carroll-alice.txt
 | 7 | caterpillar | 0.00182 |
 | 8 | rabbit | 0.00178 |
 
-`alice` is in a class of its own. The next tier is the supporting cast. `alices` (from `Alice's`) also appears further down because apostrophes were stripped. `lookup-term.pl alice` reports IDF `1.79176`, which is `ln(18/3)`: the name occurs in three files, not one. The score is still large because the TF inside Carroll is huge.
+`alice` is in a class of its own. The next tier is the supporting cast. `alices` (from `Alice's`) also appears further down because apostrophes were stripped. `lookup-term.pl alice` reports IDF `1.79176`, which is `ln(18/3)`: the token also occurs in `chesterton-thursday.txt` and `edgeworth-parents.txt`. The score is still large because the TF inside Carroll is huge.
 
 ## *Moby-Dick*
 

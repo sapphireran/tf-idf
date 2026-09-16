@@ -1,0 +1,22 @@
+==== cat ====
+idf	1.38629436111989
+df	1	cats.txt, 
+tfidf by document (non-zero or present rows):
+  cats.txt                      0.0693147180559945
+
+==== the ====
+idf	0
+df	4	bakery.txt, cats.txt, harbor.txt, observatory.txt, 
+tfidf by document (non-zero or present rows):
+  bakery.txt                    0
+  cats.txt                      0
+  harbor.txt                    0
+  observatory.txt               0
+
+==== wind ====
+idf	0.693147180559945
+df	2	harbor.txt, observatory.txt, 
+tfidf by document (non-zero or present rows):
+  observatory.txt               0.00737390617616963
+  harbor.txt                    0.00729628611115732
+
