@@ -210,5 +210,16 @@ python3 examples/compare_documents.py --a austen-emma --b austen-sense
 python3 examples/compare_documents.py --a austen-emma --b bible-kjv
 ```
 
-The two Austen novels should be much closer than Emma vs the KJV. If they
-are not, the snapshot and this write-up have drifted.
+Measured on this snapshot:
+
+```
+austen-emma vs austen-sense     cosine 0.0675
+austen-emma vs bible-kjv        cosine 0.0112
+shakespeare-hamlet vs macbeth   cosine 0.3084
+```
+
+Emma is about six times closer to *Sense and Sensibility* than to the KJV.
+The two tragedies look "similar" mostly because they share Early Modern
+tokens (`haue`, `vpon`, `vs`, `selfe`), which `--show-overlap` lists first.
+If those three inequalities flip, the snapshot and this write-up have
+drifted.

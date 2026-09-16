@@ -53,6 +53,33 @@ def short_name(name: str) -> str:
     return name.removesuffix(".txt")
 
 
+# Distinctive enough that three Austens / Chestertons / Shakespeares
+# do not collapse to the same 8-character prefix in the matrix.
+_LABEL_PREFIX = (
+    ("shakespeare-", "sh-"),
+    ("chesterton-", "ch-"),
+    ("austen-", "au-"),
+    ("melville-", "me-"),
+    ("carroll-", "ca-"),
+    ("burgess-", "bu-"),
+    ("edgeworth-", "ed-"),
+    ("milton-", "mi-"),
+    ("whitman-", "wh-"),
+    ("bryant-", "br-"),
+    ("blake-", "bl-"),
+    ("bible-", "bi-"),
+)
+
+
+def matrix_label(name: str, width: int = 11) -> str:
+    stem = short_name(name)
+    for prefix, repl in _LABEL_PREFIX:
+        if stem.startswith(prefix):
+            stem = repl + stem[len(prefix) :]
+            break
+    return stem[:width]
+
+
 def available_docs() -> list[str]:
     return sorted(p.name for p in TFIDF_DIR.glob("*.txt"))
 
@@ -115,14 +142,17 @@ def print_pair(
 
 def print_matrix(names: list[str], cache: dict[str, dict[str, float]]) -> None:
     vectors = [load_named(name, cache) for name in names]
-    labels = [short_name(name)[:16] for name in names]
-    width = max(16, max(len(label) for label in labels))
-    header = " " * width + "  " + "  ".join(f"{label:>8.8}" for label in labels)
+    labels = [matrix_label(name) for name in names]
+    if len(set(labels)) != len(labels):
+        raise RuntimeError(f"matrix labels collide: {labels}")
+    width = max(len(label) for label in labels)
+    col = max(width, 6)
+    header = " " * width + "  " + "  ".join(f"{label:>{col}}" for label in labels)
     print(header)
     for i, left in enumerate(vectors):
         cells = []
         for j, right in enumerate(vectors):
-            cells.append(f"{cosine(left, right):8.4f}")
+            cells.append(f"{cosine(left, right):{col}.4f}")
         print(f"{labels[i]:<{width}}  " + "  ".join(cells))
 
 

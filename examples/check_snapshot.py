@@ -124,6 +124,7 @@ def main() -> int:
             raise AssertionError(
                 f"Hamlet top term is {top_term(hamlet_tfidf)!r}, expected speech prefix 'ham'"
             )
+        _check_matrix_labels()
     except AssertionError as exc:
         print(f"FAIL: {exc}")
         return 1
@@ -133,6 +134,16 @@ def main() -> int:
 
     print("Gutenberg snapshot checks passed (N=18, worked-example identities hold)")
     return 0
+
+
+def _check_matrix_labels() -> None:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import compare_documents
+
+    names = compare_documents.available_docs()
+    labels = [compare_documents.matrix_label(name) for name in names]
+    if len(set(labels)) != len(labels):
+        raise AssertionError(f"matrix labels collide: {labels}")
 
 
 if __name__ == "__main__":

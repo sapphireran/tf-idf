@@ -56,14 +56,24 @@ Terms that are 0 in both books do not appear in either file and never enter
 the dot product. Terms that are 0 in one book (absent from that TF table)
 contribute nothing. That is ordinary sparse cosine.
 
-Expect, qualitatively:
+Measured on the frozen snapshot (`examples/compare_documents.py --matrix`):
 
-- Austen ↔ Austen and Chesterton ↔ Chesterton: high.
-- Shakespeare ↔ Shakespeare: high, partly because they share `haue` / `vpon`
-  / `vs` / `doe`.
-- Alice ↔ Bible: low.
-- *Moby-Dick* ↔ Whitman: middling — both are 19th-century American and
-  share some sea / body vocabulary, but the character names are unique.
+| Pair | Cosine | Reading |
+| --- | ---: | --- |
+| Hamlet ↔ Macbeth | 0.308 | Highest non-trivial pair; overlap is `haue` / `vpon` / `vs` |
+| Caesar ↔ Hamlet | 0.253 | Same speech-prefix / Early Modern cluster |
+| *Paradise Lost* ↔ *Leaves of Grass* | 0.265 | Shared elevated diction, not plot |
+| *Paradise Lost* ↔ Blake | 0.224 | Short religious/poetic vocabulary |
+| *Paradise Lost* ↔ KJV | 0.205 | Biblical names and syntax |
+| Emma ↔ *The Parent's Assistant* | 0.101 | Higher than Emma ↔ *Sense* (0.067) |
+| Emma ↔ KJV | 0.011 | The "far apart" sanity check |
+| Alice ↔ KJV | 0.006 | Near the floor |
+| Buster Bear ↔ Caesar | 0.0002 | Effectively orthogonal |
+
+Same-author Austen pairs are only 0.067–0.088. Character names are unique
+per novel, so cosine on TF-IDF is milder than "same author" intuition.
+Shakespeare looks tighter because the tokenizer keeps a shared non-modern
+lexicon.
 
 If a pair looks "too similar," dump the overlapping high terms with:
 
