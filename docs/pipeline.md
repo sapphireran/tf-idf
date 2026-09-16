@@ -42,6 +42,16 @@ After all files:
 There is no `output/` creation: the directories must already exist.
 (`tfidf_toy compute` creates them.)
 
+The committed `output/idf.txt` has a single smashed row,
+
+```
+thatyou<TAB>2.89037175789616y
+```
+
+instead of a clean float (a leftover `y` glued onto the score). The Python
+loader keeps the numeric prefix and moves on. Rankings in `output/tfidf/`
+are unaffected.
+
 ## Script 2: `tf*idf-product.pl`
 
 The filename is literal: `tf` times `idf`.

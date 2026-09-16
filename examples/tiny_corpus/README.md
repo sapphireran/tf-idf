@@ -14,5 +14,6 @@ The arithmetic is written out in [`docs/worked-example.md`](../../docs/worked-ex
 Shared tokens `the`, `was`, and `late` have idf 0 under the raw formula
 and must not appear in a top-term listing.
 
-Do not add files to this directory without updating the worked-example
-document and the unit tests: the floats there are part of the spec.
+Only `*.txt` files are indexed (`README.md` is ignored). Do not add extra
+`.txt` files without updating the worked-example document and the unit
+tests: the floats there are part of the spec.

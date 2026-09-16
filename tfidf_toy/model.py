@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import math
+import re
 from collections import Counter, defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -189,14 +190,35 @@ def _write_term_table(path: Path, values: dict[str, float]) -> None:
             handle.write(f"{term}\t{format_score(values[term])}\n")
 
 
+_LEADING_FLOAT = re.compile(r"^[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?")
+
+
 def load_term_table(path: Path) -> dict[str, float]:
-    """Load a ``term<TAB>float`` file such as output/tfidf/carroll-alice.txt."""
+    """Load a ``term<TAB>float`` file such as output/tfidf/carroll-alice.txt.
+
+    The committed ``output/idf.txt`` has one smashed row
+    (``thatyou\\t2.89037175789616y``) from the original Perl dump. A trailing
+    non-numeric fragment is ignored so the rest of the table still loads.
+    """
     table: dict[str, float] = {}
-    for line in Path(path).read_text(encoding="utf-8", errors="replace").splitlines():
-        if not line.strip():
+    for line_no, line in enumerate(
+        Path(path).read_text(encoding="utf-8", errors="replace").splitlines(), start=1
+    ):
+        stripped = line.strip()
+        if not stripped or stripped.startswith("word \t"):
             continue
-        term, raw_score = line.split("\t", 1)
-        table[term] = float(raw_score)
+        if "\t" not in stripped:
+            raise ValueError(f"{path}:{line_no}: missing tab in {line!r}")
+        term, raw_score = stripped.split("\t", 1)
+        raw_score = raw_score.strip()
+        try:
+            table[term] = float(raw_score)
+            continue
+        except ValueError:
+            match = _LEADING_FLOAT.match(raw_score)
+            if not match:
+                raise ValueError(f"{path}:{line_no}: bad score in {line!r}") from None
+            table[term] = float(match.group(0))
     return table
 
 

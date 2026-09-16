@@ -56,15 +56,19 @@ def tokenize(text: str, *, match_perl_length: bool = False) -> tuple[list[str], 
     return tokens, length
 
 
-def load_corpus(directory: Path) -> dict[str, str]:
-    """Load every non-hidden file in ``directory`` keyed by filename.
+def load_corpus(directory: Path, *, pattern: str = "*.txt") -> dict[str, str]:
+    """Load text files in ``directory`` keyed by filename.
 
-    UTF-8 is tried first; ``shakespeare-caesar.txt`` in this repo is latin-1,
-    so a decode error falls back to ISO-8859-1.
+    Default ``pattern='*.txt'`` so notes such as ``examples/tiny_corpus/README.md``
+    are not treated as documents. The original Perl scripts read every non-hidden
+    file; ``gutenberg/`` in this repo is entirely ``.txt``.
+
+    UTF-8 is tried first; ``shakespeare-caesar.txt`` is latin-1, so a decode
+    error falls back to ISO-8859-1.
     """
     directory = Path(directory)
     documents: dict[str, str] = {}
-    for path in sorted(directory.iterdir()):
+    for path in sorted(directory.glob(pattern)):
         if path.name.startswith("."):
             continue
         if not path.is_file():
@@ -74,5 +78,5 @@ def load_corpus(directory: Path) -> dict[str, str]:
         except UnicodeDecodeError:
             documents[path.name] = path.read_text(encoding="latin-1")
     if not documents:
-        raise FileNotFoundError(f"no documents found in {directory}")
+        raise FileNotFoundError(f"no documents matching {pattern!r} in {directory}")
     return documents

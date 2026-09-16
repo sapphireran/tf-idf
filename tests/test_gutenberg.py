@@ -32,9 +32,14 @@ class CommittedPerlOutputTests(unittest.TestCase):
 
     def test_hapax_document_idf_is_ln18(self) -> None:
         idf = load_term_table(ROOT / "output" / "idf.txt")
-        self.assertAlmostEqual(idf["gryphon"], LN18, places=10)
+        # gryphon appears in Alice *and* Paradise Lost, so its idf is ln(18/2).
+        self.assertAlmostEqual(idf["gryphon"], math.log(18 / 2), places=10)
+        self.assertAlmostEqual(idf["dormouse"], LN18, places=10)
+        self.assertAlmostEqual(idf["buster"], LN18, places=10)
         self.assertEqual(idf["the"], 0.0)
         self.assertEqual(idf["and"], 0.0)
+        # one smashed row in the historical dump: score plus leftover "y"
+        self.assertAlmostEqual(idf["thatyou"], LN18, places=10)
 
     def test_moby_dick_top_term_is_the_whale(self) -> None:
         table = load_term_table(ROOT / "output" / "tfidf" / "melville-moby_dick.txt")

@@ -77,6 +77,12 @@ class TokenizeDocumentTests(unittest.TestCase):
         )
         self.assertEqual(length, 9)
 
+    def test_load_corpus_skips_markdown_notes(self) -> None:
+        from tfidf_toy.tokenize import load_corpus
+
+        docs = load_corpus(ROOT / "examples" / "tiny_corpus")
+        self.assertEqual(set(docs), {"alice.txt", "hamlet.txt", "whale.txt"})
+
     def test_multiline_sums_length(self) -> None:
         tokens, length = tokenize("Hello world.\nHello!")
         self.assertEqual(tokens, ["hello", "world", "hello"])
