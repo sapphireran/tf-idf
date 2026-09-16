@@ -1,0 +1,8 @@
+# named pairs (same helper as cosine-top-pairs.txt)
+
+cosine(austen-emma.txt, austen-sense.txt) = 0.067473
+cosine(austen-emma.txt, austen-persuasion.txt) = 0.087853
+cosine(carroll-alice.txt, shakespeare-macbeth.txt) = 0.001300
+cosine(bible-kjv.txt, milton-paradise.txt) = 0.204936
+cosine(chesterton-brown.txt, chesterton-thursday.txt) = 0.050955
+cosine(shakespeare-hamlet.txt, shakespeare-macbeth.txt) = 0.308359

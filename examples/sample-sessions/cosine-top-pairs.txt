@@ -1,0 +1,21 @@
+# pairwise cosine in /workspace/output/tfidf  (18 docs, 153 pairs)
+0.308359  shakespeare-hamlet.txt  ×  shakespeare-macbeth.txt
+0.265380  milton-paradise.txt  ×  whitman-leaves.txt
+0.252947  shakespeare-caesar.txt  ×  shakespeare-hamlet.txt
+0.226114  shakespeare-caesar.txt  ×  shakespeare-macbeth.txt
+0.224383  blake-poems.txt  ×  milton-paradise.txt
+0.204936  bible-kjv.txt  ×  milton-paradise.txt
+0.158309  blake-poems.txt  ×  whitman-leaves.txt
+0.126482  melville-moby_dick.txt  ×  whitman-leaves.txt
+0.118907  austen-persuasion.txt  ×  edgeworth-parents.txt
+0.113825  austen-sense.txt  ×  edgeworth-parents.txt
+0.108169  bible-kjv.txt  ×  whitman-leaves.txt
+0.100879  austen-emma.txt  ×  edgeworth-parents.txt
+0.099492  chesterton-brown.txt  ×  edgeworth-parents.txt
+0.098046  melville-moby_dick.txt  ×  milton-paradise.txt
+0.087870  chesterton-brown.txt  ×  whitman-leaves.txt
+
+lowest:
+0.000458  burgess-busterbrown.txt  ×  shakespeare-hamlet.txt
+0.000375  burgess-busterbrown.txt  ×  shakespeare-macbeth.txt
+0.000222  burgess-busterbrown.txt  ×  shakespeare-caesar.txt

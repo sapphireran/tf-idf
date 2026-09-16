@@ -1,0 +1,42 @@
+A: output/tfidf/carroll-alice.txt  (top 15 above 0.0)
+B: output/tfidf/shakespeare-macbeth.txt  (top 15 above 0.0)
+
+shared in both windows
+----------------------
+(none)
+
+only in A  (carroll-alice.txt)
+------------------------------
+  1  alice        0.0259567803903
+  2  gryphon      0.00454723629416
+  3  dormouse     0.00424159010227
+  4  duchess      0.00424159010227
+  5  hatter       0.00370811148433
+  6  turtle       0.00316933828339
+  7  caterpillar  0.00182034563776
+  8  rabbit       0.0017775560059
+  9  alices       0.00130510464685
+ 10  herself      0.0012663156221
+ 11  soup         0.00121356375851
+ 12  mouse        0.00115951791903
+ 13  hare         0.00110168234023
+ 14  dodo         0.00107480130589
+ 15  im           0.00105625977011
+
+only in B  (shakespeare-macbeth.txt)
+------------------------------------
+  1  macb     0.0215558481672
+  2  haue     0.0118995457401
+  3  macbeth  0.00975520136035
+  4  macd     0.00912583353065
+  5  rosse    0.00770975591382
+  6  vpon     0.00565716108956
+  7  vs       0.00536454930907
+  8  banquo   0.00534962655245
+  9  lenox    0.0044055748079
+ 10  mal      0.00393354893562
+ 11  thane    0.00393354893562
+ 12  banq     0.0037762069782
+ 13  doe      0.00370641588626
+ 14  feare    0.00341380410577
+ 15  cawdor   0.00330418110592
