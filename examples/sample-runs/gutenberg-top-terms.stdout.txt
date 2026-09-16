@@ -1,0 +1,30 @@
+=== carroll-alice.txt ===
+ 1  alice                 0.02595678
+ 2  gryphon               0.0045472363
+ 3  dormouse              0.0042415901
+ 4  duchess               0.0042415901
+ 5  hatter                0.0037081115
+ 6  turtle                0.0031693383
+ 7  caterpillar           0.0018203456
+ 8  rabbit                0.001777556
+
+=== melville-moby_dick.txt ===
+ 1  whale                 0.0049434288
+ 2  ahab                  0.0043216139
+ 3  sperm                 0.00325827
+ 4  stubb                 0.0030946748
+ 5  queequeg              0.002876548
+ 6  whales                0.0027596579
+ 7  starbuck              0.002303965
+ 8  pequod                0.0016495844
+
+=== austen-emma.txt ===
+ 1  emma                  0.010432149
+ 2  harriet               0.0071265235
+ 3  weston                0.0069803384
+ 4  knightley             0.0061397741
+ 5  elton                 0.0057925845
+ 6  mr                    0.004176817
+ 7  fairfax               0.0036729006
+ 8  woodhouse             0.0036533359
+
