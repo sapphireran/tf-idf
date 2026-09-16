@@ -35,7 +35,9 @@ def load_scores(path: Path) -> list[tuple[str, float]]:
     for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
         if not line:
             continue
-        if line.startswith("word \t") or line.startswith("word\t"):
+        # df.txt header is "word \t #docs it exists in \t doc names"
+        # Do not treat the real term "word" (`word\t0`) as a header.
+        if "\t#docs" in line:
             continue
         term, value = line.split("\t", 1)
         # df.txt has a third column; ignore it if someone points --dir at output/

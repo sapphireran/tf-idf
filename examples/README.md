@@ -29,6 +29,9 @@ python3 examples/tiny-corpus/compute_tfidf.py --verify
 # reprint Gutenberg rankings from the committed TSV files
 python3 examples/rank_top_terms.py --dir output/tfidf --k 12
 
+# regressions: tiny verifier, committed tables, ranker header/`thatyou` parsing
+python3 examples/test_examples.py
+
 # one file only
 python3 examples/rank_top_terms.py --dir output/tfidf --file carroll-alice.txt --k 8
 ```

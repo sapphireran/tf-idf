@@ -94,11 +94,11 @@ python3 examples/rank_top_terms.py --dir output/tfidf --file austen-emma.txt --k
 
 ## How many terms get zeroed?
 
-In `output/tfidf/austen-emma.txt`, **220** terms have TF-IDF exactly `0`
-(`examples/rank_top_terms.py --zeros`). They are the vocabulary intersection
-of all 18 files: `a`, `about`, `after`, `and`, `the`, plus a surprising
-number of milder words that just happen to appear everywhere in this sample
-(`age`, `alone`, `angry`, `bed`, …).
+In `output/tfidf/austen-emma.txt`, **221** terms have TF-IDF exactly `0`
+(including the term `word`; `examples/rank_top_terms.py --zeros`). They are
+the vocabulary intersection of all 18 files: `a`, `about`, `after`, `and`,
+`the`, plus milder words that just happen to appear everywhere in this
+sample (`age`, `alone`, `angry`, `bed`, …).
 
 Zero is a **corpus accident**. Add a 19th document that never says `angry`
 and `angry` would suddenly have nonzero IDF in *Emma*.
