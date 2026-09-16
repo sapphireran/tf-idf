@@ -2,8 +2,24 @@
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Iterable, Mapping
+
+# Gold output/idf.txt has one corrupt hapax row: "thatyou\\t2.89037175789616y".
+_LEADING_FLOAT = re.compile(r"[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?")
+
+
+def parse_float(raw: str) -> float:
+    """Parse a Perl-printed float, ignoring a trailing junk character if present."""
+    raw = raw.strip()
+    try:
+        return float(raw)
+    except ValueError:
+        match = _LEADING_FLOAT.search(raw)
+        if not match:
+            raise
+        return float(match.group(0))
 
 
 def load_tf_tsv(path: Path) -> dict[str, float]:
@@ -14,7 +30,7 @@ def load_tf_tsv(path: Path) -> dict[str, float]:
             if not line:
                 continue
             term, raw = line.split("\t", 1)
-            values[term] = float(raw)
+            values[term] = parse_float(raw)
     return values
 
 

@@ -58,7 +58,7 @@ few content words such as `angry`, `bed`, `breath`, `children` — that happen
 to occur in all eighteen files. TF-IDF does not need a separate stoplist to
 kill them.
 
-The gold IDF file has **57,367** terms.
+The gold IDF file has **57,368** terms.
 
 ## The product
 

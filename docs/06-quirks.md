@@ -70,3 +70,12 @@ need it.
 
 The original commit shipped Finder metadata next to the TSVs. The product
 script skips it (`/^\./`). So does `querydesk.tables.list_table_files`.
+
+## 9. One corrupt gold IDF row
+
+`output/idf.txt` line 50450 is `thatyou	2.89037175789616y` — a hapax
+(`df = 1`, Melville only) whose Perl float picked up a trailing `y`.
+The matching TF and TF-IDF rows are clean (`4.71666965389078e-06` and
+`1.36329287589318e-05`, which is `tf × ln(18)`). The desk parser keeps
+the leading float so `--from-committed` still loads. A rebuild from
+`gutenberg/` writes `ln(18)` without the suffix.
