@@ -21,6 +21,17 @@ LN3 = math.log(3)
 LN3_OVER_6 = LN3 / 6
 
 
+class IterDocumentsTests(unittest.TestCase):
+    def test_skips_markdown_readme(self) -> None:
+        excerpt_dir = REPO_ROOT / "examples" / "excerpts"
+        names = [p.name for p in tfidf_example.iter_documents(excerpt_dir)]
+        self.assertEqual(
+            names,
+            ["alice-opening.txt", "macbeth-witches.txt", "moby-cetology.txt"],
+        )
+        self.assertNotIn("README.md", names)
+
+
 class TokenizeTests(unittest.TestCase):
     def test_alices_loses_apostrophe(self) -> None:
         self.assertEqual(
@@ -112,6 +123,25 @@ class TinyCorpusTests(unittest.TestCase):
                 (out / "tfidf" / "cats.txt").read_text(encoding="utf-8"),
                 (EXPECTED / "tfidf" / "cats.txt").read_text(encoding="utf-8"),
             )
+
+
+class ExcerptCollectionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.result = tfidf_example.compute(REPO_ROOT / "examples" / "excerpts")
+
+    def test_n_is_three_txt_files(self) -> None:
+        self.assertEqual(self.result["n"], 3)
+
+    def test_alice_outranks_the(self) -> None:
+        weights = self.result["tfidf"]["alice-opening.txt"]
+        self.assertGreater(weights["alice"], weights.get("the", 0.0))
+        self.assertGreater(weights["she"], weights["alice"])
+
+    def test_whale_leads_moby_excerpt(self) -> None:
+        weights = self.result["tfidf"]["moby-cetology.txt"]
+        top = max(weights, key=weights.get)
+        self.assertEqual(top, "whale")
 
 
 class AliceGutenbergIdentityTests(unittest.TestCase):

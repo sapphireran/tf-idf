@@ -48,7 +48,8 @@ class LoadAndRankTests(unittest.TestCase):
         joined = buf.getvalue()
         self.assertIn("alice", joined)
         self.assertIn("gryphon", joined)
-        self.assertIn("duchess", joined)
+        # duchess and dormouse tie; alphabetical tie-break puts dormouse first
+        self.assertIn("dormouse", joined)
 
     def test_zeros_count(self) -> None:
         path = REPO_ROOT / "output" / "tfidf" / "carroll-alice.txt"

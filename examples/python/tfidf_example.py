@@ -3,7 +3,7 @@
 
 Tokenization matches tf-idf-values.pl: lowercase, strip non-alphanumerics,
 split on spaces. TF is count / tokens(doc). IDF is ln(N / df) with no
-smoothing. N defaults to the number of non-hidden input files (the
+smoothing. N defaults to the number of non-hidden *.txt files (the
 definition used by the committed Gutenberg tables), not Perl's $#files.
 
 Example:
@@ -41,9 +41,13 @@ def tokenize_file(path: Path) -> list[str]:
 
 
 def iter_documents(input_dir: Path) -> list[Path]:
-    files = [p for p in sorted(input_dir.iterdir()) if p.is_file() and not p.name.startswith(".")]
+    files = [
+        p
+        for p in sorted(input_dir.iterdir())
+        if p.is_file() and not p.name.startswith(".") and p.suffix.lower() == ".txt"
+    ]
     if not files:
-        raise SystemExit(f"no non-hidden files in {input_dir}")
+        raise SystemExit(f"no non-hidden .txt files in {input_dir}")
     return files
 
 

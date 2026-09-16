@@ -20,7 +20,7 @@ ln(18 / 1) = 2.89037175789616
 
 So the tables in `output/` were produced with one document per `.txt`. A rerun on a macOS checkout that still has `.DS_Store`, or on a listing that includes extra dotfiles, will change every IDF and every TF-IDF.
 
-The Python example counts non-hidden input files and uses that as `N`. That is the definition these notes use everywhere else.
+The Python example counts non-hidden `*.txt` files and uses that as `N`. That is the definition these notes use everywhere else. Markdown files in the same folder (for example `examples/excerpts/README.md`) are not documents.
 
 If you want the Perl to match the notes, replace `$#files` with a count of files that actually entered the TF loop.
 

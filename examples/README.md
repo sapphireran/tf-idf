@@ -33,6 +33,14 @@ python3 examples/python/extract_top_terms.py /tmp/excerpt-tfidf/tfidf/alice-open
 - `python/tfidf_example.py` — reimplementation of the two Perl scripts
 - `python/extract_top_terms.py` — rank a committed or freshly written TSV
 
+## One-shot check
+
+```bash
+bash examples/run_checks.sh
+```
+
+Recreates the tiny-corpus tables, scores the excerpts, prints the Alice contrast (excerpt vs full book), and runs the unit tests.
+
 ## Suggested follow-ups
 
 Ideas that stay inside this personal repo: [../docs/further-experiments.md](../docs/further-experiments.md).

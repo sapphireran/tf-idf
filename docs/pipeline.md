@@ -50,7 +50,7 @@ my $idf_val = log($n / ($#vals + 1));
 
 The committed `output/idf.txt` uses `ln(18 / df)`, i.e. one document per `.txt`. That is the number the rest of these notes treat as `N`. If you rerun the script in an environment where `readdir` returns extra dotfiles, hapax IDF will no longer be `2.89037175789616`.
 
-[known-quirks.md](known-quirks.md) records this in more detail. The Python example takes `--n` defaulting to the count of non-hidden input files, which matches the committed tables.
+[known-quirks.md](known-quirks.md) records this in more detail. The Python example takes `--n` defaulting to the count of non-hidden `*.txt` files, which matches the committed tables.
 
 ### Directories the script expects
 

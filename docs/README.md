@@ -6,7 +6,8 @@ These pages describe the pipeline in this repository, not a generic textbook cha
 
 1. [algorithm.md](algorithm.md) — what is being computed and why `the` disappears.
 2. [tiny-corpus walkthrough](../examples/tiny-corpus/walkthrough.md) — three six-word documents, every intermediate value.
-3. [interpreting-results.md](interpreting-results.md) — ranked terms from the 18-book run.
+3. [collection-size.md](collection-size.md) — the same formula at N=3 (toy), N=3 (excerpts), N=18.
+4. [interpreting-results.md](interpreting-results.md) — ranked terms from the 18-book run.
 
 ## Implementation notes
 

@@ -125,6 +125,7 @@ The committed Gutenberg IDF table was produced with `N = 18` (one per `.txt` in 
 | [docs/known-quirks.md](docs/known-quirks.md) | N, speaker tags, spelling, DF overlaps |
 | [examples/README.md](examples/README.md) | Toy corpus, excerpts, and Python examples |
 | [docs/further-experiments.md](docs/further-experiments.md) | Personal follow-up runs |
+| [docs/collection-size.md](docs/collection-size.md) | Toy vs excerpts vs 18 books |
 
 ## License and sources
 
