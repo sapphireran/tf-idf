@@ -65,6 +65,14 @@ class HandCalculationTests(unittest.TestCase):
     def test_n_is_three(self) -> None:
         self.assertEqual(self.col.n_docs, 3)
 
+    def test_checked_in_hand_folder_matches_this_page(self) -> None:
+        folder = ROOT / "examples" / "hand-calculation"
+        col = compute.load_collection(folder)
+        by_name = {doc.name: doc for doc in col.documents}
+        self.assertEqual(col.n_docs, 3)
+        self.assertAlmostEqual(col.tfidf("and", by_name["d3.txt"]), 0.2197224577, places=10)
+        self.assertAlmostEqual(col.tfidf("tea", by_name["d3.txt"]), 0.1621860432, places=10)
+
     def test_token_counts(self) -> None:
         self.assertEqual(self.by_name["d1.txt"].n_tokens, 4)
         self.assertEqual(self.by_name["d2.txt"].n_tokens, 4)

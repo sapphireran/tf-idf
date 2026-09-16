@@ -128,17 +128,11 @@ That is why a three-document toy set is a bad keyword extractor and a good formu
 
 ## 7. Reproduce with the helper
 
-The tiny-corpus script accepts any directory of `*.txt` files. You can drop these three lines into a temp folder and get the same table:
+The three documents are checked in under `examples/hand-calculation/`. The tiny-corpus script accepts any directory of `*.txt` files:
 
 ```bash
-mkdir -p /tmp/tfidf-hand/{d1,d2,d3}
-# easier: three files in one folder
-mkdir -p /tmp/tfidf-hand
-printf 'the tea is hot\n' > /tmp/tfidf-hand/d1.txt
-printf 'the storm is loud\n' > /tmp/tfidf-hand/d2.txt
-printf 'hot tea and tea leaves\n' > /tmp/tfidf-hand/d3.txt
-python3 examples/tiny-corpus/compute_tfidf.py --docs /tmp/tfidf-hand --out /tmp/tfidf-hand-out
-python3 examples/tiny-corpus/compute_tfidf.py --docs /tmp/tfidf-hand --explain tea
+python3 examples/tiny-corpus/compute_tfidf.py --docs examples/hand-calculation --out /tmp/tfidf-hand-out
+python3 examples/tiny-corpus/compute_tfidf.py --docs examples/hand-calculation --explain tea --no-write
 ```
 
 The unit tests in `tests/test_tiny_tfidf.py` lock the eight idf values and the d3 ranking to the floats on this page.
