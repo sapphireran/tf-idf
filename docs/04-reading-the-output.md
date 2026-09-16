@@ -32,10 +32,10 @@ word<TAB>#docs it exists in<TAB>doc names
 The first line is a header. Each later line is:
 
 ```
-alice	3	carroll-alice.txt, chesterton-brown.txt, austen-emma.txt,
+alice	3	chesterton-thursday.txt, carroll-alice.txt, edgeworth-parents.txt,
 ```
 
-(The actual posting order follows Perl hash key order from 2012, not alphabetical file order.) Names are comma-space separated and the list ends with a trailing comma-space.
+(The actual posting order follows Perl hash key order from 2012, not alphabetical file order. `alice` is almost entirely Carroll; the other two hits are stray uses of the name.) Names are comma-space separated and the list ends with a trailing comma-space.
 
 `#docs` is `df(t)`. It should equal the number of filenames in the third column.
 

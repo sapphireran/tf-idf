@@ -37,13 +37,13 @@ Cosine is 1 for identical directions, 0 for no shared weighted vocabulary, and i
 
 ## What you should expect on this sample
 
-Because the strongest weights are proper names and author-specific spellings, cosine on these tables is mostly **authorship and cast detection**:
+Because the strongest weights are proper names and author-specific spellings, cosine on these tables is only sometimes authorship detection:
 
-- The three Austen novels sit near each other.
-- The three Shakespeare plays sit near each other (`haue`, `vpon`, `vs` are a shared Folio dialect with `df = 3`).
-- The three Chesterton books sit near each other.
-- Alice is relatively isolated: her top weights (`alice`, `gryphon`, `duchess`, `dormouse`) barely leave the book.
-- The Bible is relatively isolated: huge unique vocabulary, little overlap at high weight.
+- The three Shakespeare plays *do* sit near each other. `haue`, `vpon`, and `vs` are a shared Folio dialect with `df = 3`, and speech-prefix overlap is enough to put all three pairs in the global top four.
+- The three Austen novels do **not** form the tightest cluster. Each novel's top weights are character names that do not repeat, so *Emma* is as close to Edgeworth as it is to *Persuasion*. Shared period words (`mr`, `mrs`) have mid-range `idf` and cannot outrun unique casts.
+- Alice is isolated: `alice`, `gryphon`, `duchess`, and `dormouse` barely leave the book. Her nearest neighbor scores are around 0.03.
+- Milton, Blake, Whitman, and the Bible share `thee` / `thou` / `heaven` and therefore sit closer than theme would suggest.
+- A query of distinctive names (`white whale ahab pequod`, `emma harriet knightley`) still retrieves the right book, because those strings carry almost all of the query vector.
 
 Run:
 
