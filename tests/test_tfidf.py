@@ -104,6 +104,8 @@ class ThemesCorpusTests(unittest.TestCase):
         self.assertAlmostEqual(scores["bakery.txt"], 1.0, delta=1e-12)
         self.assertGreater(scores["bakery.txt"], scores["observatory.txt"])
         self.assertGreater(scores["bakery.txt"], scores["concert.txt"])
+        # Shared tokens are only collection-wide words (the, a, second, before).
+        self.assertAlmostEqual(scores["concert.txt"], 0.0, delta=1e-12)
 
 
 class TopTermsReaderTests(unittest.TestCase):
