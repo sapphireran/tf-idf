@@ -1,0 +1,15 @@
+apple	0.1
+bloom	0.05
+blossom	0.05
+cider	0.05
+cover	0.05
+drips	0.05
+from	0.05
+grass	0.05
+in	0.05
+orchard	0.1
+petals	0.05
+press	0.05
+sweet	0.05
+the	0.2
+trees	0.05
