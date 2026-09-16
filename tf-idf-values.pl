@@ -1,3 +1,19 @@
+# tf-idf-values.pl
+#
+# Pass 1 of the personal Gutenberg tf-idf toy.
+# Reads every non-dot file in gutenberg/, writes:
+#   output/tf/<filename>   term<TAB> count/tokens
+#   output/df.txt          term, document frequency, filenames
+#   output/idf.txt         term<TAB> ln(N / df)
+#
+# Tokenization: lowercase, strip non-alphanumeric, split on spaces.
+# N in this script is $#files after readdir — see docs/known-quirks.md.
+# Usage (from the repo root):
+#   mkdir -p output/tf output/tfidf
+#   perl tf-idf-values.pl
+#
+# Companion: tf*idf-product.pl   Notes: docs/pipeline.md, docs/script-reference.md
+
 use strict;
 
 opendir(DIR,"gutenberg");
