@@ -55,6 +55,7 @@ The Shakespeare files keep abbreviated speech prefixes:
 | --- | --- | --- |
 | `shakespeare-hamlet.txt` | `ham` 0.014075 | `hamlet` 0.003582 |
 | `shakespeare-macbeth.txt` | `macb` 0.021556 | `macbeth` 0.009755 |
+| `shakespeare-caesar.txt` | `bru` 0.0208, `cassi` 0.0146, `caes` 0.0053 | `brutus` 0.0167, `caesar` 0.0073 |
 
 `HAM.` → `ham`, `MACB.` → `macb`. A query for `hamlet` still finds the
 right play because `hamlet` itself has weight there; it just is not the

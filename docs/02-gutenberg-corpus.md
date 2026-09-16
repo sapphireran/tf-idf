@@ -16,23 +16,23 @@ Lengths are line counts of the checked-in files, not token counts.
 | File | Work | Lines | Tokens that rise to the top |
 | --- | --- | --- | --- |
 | `austen-emma.txt` | Jane Austen, *Emma* | 16,823 | `emma`, `harriet`, `weston`, `knightley` |
-| `austen-persuasion.txt` | Jane Austen, *Persuasion* | 8,471 | surnames and places from the Elliot / Wentworth plot |
-| `austen-sense.txt` | Jane Austen, *Sense and Sensibility* | 14,796 | Dashwood-family vocabulary |
+| `austen-persuasion.txt` | Jane Austen, *Persuasion* | 8,471 | `elliot`, `wentworth`, `anne`, `musgrove`, `uppercross` |
+| `austen-sense.txt` | Jane Austen, *Sense and Sensibility* | 14,796 | `elinor`, `marianne`, `dashwood`, `jennings`, `willoughby` |
 | `bible-kjv.txt` | King James Bible | 99,805 | `unto`, `israel`, `saith`, `thee` |
-| `blake-poems.txt` | William Blake, *Songs* and related poems | 1,441 | `thel`, `weep`, `lyca`, `lamb` |
-| `bryant-stories.txt` | Stories by Sara Cone Bryant | 5,538 | children's-story names and verbs |
-| `burgess-busterbrown.txt` | Thornton Burgess, *The Adventures of Buster Bear* | 1,671 | `buster` is IDF-max (df = 1) |
+| `blake-poems.txt` | William Blake, *Songs* and related poems | 1,441 | `thel`, `weep`, `lyca`, `vales` |
+| `bryant-stories.txt` | Stories by Sara Cone Bryant | 5,538 | `margery`, `jackal`, `brahmin`, `epaminondas` |
+| `burgess-busterbrown.txt` | Thornton Burgess, *The Adventures of Buster Bear* | 1,671 | `buster` 0.0404 (df = 1), then `browns`, `joe`, `blacky` |
 | `carroll-alice.txt` | Lewis Carroll, *Alice's Adventures in Wonderland* | 3,331 | `alice`, `gryphon`, `dormouse`, `duchess` |
-| `chesterton-ball.txt` | G. K. Chesterton, *The Ball and the Cross* | 9,548 | novel-specific names |
-| `chesterton-brown.txt` | Chesterton, Father Brown stories | 7,654 | Brown / Flambeau vocabulary |
-| `chesterton-thursday.txt` | Chesterton, *The Man Who Was Thursday* | 6,793 | Thursday-plot names |
-| `edgeworth-parents.txt` | Maria Edgeworth, *The Parent's Assistant* | 18,297 | moral-tale names |
+| `chesterton-ball.txt` | G. K. Chesterton, *The Ball and the Cross* | 9,548 | `turnbull`, `macian`, `evan` |
+| `chesterton-brown.txt` | Chesterton, Father Brown stories | 7,654 | `flambeau`, `boulnois`, `muscari`, `brown` |
+| `chesterton-thursday.txt` | Chesterton, *The Man Who Was Thursday* | 6,793 | `syme`, `gregory`, `professor`, `gogol` |
+| `edgeworth-parents.txt` | Maria Edgeworth, *The Parent's Assistant* | 18,297 | `cecilia`, `susan`, `piedro`, `leonora` |
 | `melville-moby_dick.txt` | Herman Melville, *Moby-Dick* | 22,924 | `whale`, `ahab`, `sperm`, `stubb`, `queequeg` |
-| `milton-paradise.txt` | John Milton, *Paradise Lost* | 10,635 | epic / theological diction |
-| `shakespeare-caesar.txt` | *Julius Caesar* | 3,523 | speaker tags and early-modern spelling |
+| `milton-paradise.txt` | John Milton, *Paradise Lost* | 10,635 | `heaven`, `eve`, `adam` (plus `thee`/`thou`) |
+| `shakespeare-caesar.txt` | *Julius Caesar* | 3,523 | `bru`, `brutus`, `cassi`, `cassius`, `caes` |
 | `shakespeare-hamlet.txt` | *Hamlet* | 4,922 | `ham`, `haue`, `hor`, `hamlet` |
 | `shakespeare-macbeth.txt` | *Macbeth* | 3,286 | `macb`, `haue`, `macbeth`, `banquo` |
-| `whitman-leaves.txt` | Walt Whitman, *Leaves of Grass* | 17,435 | catalogue diction and first-person plural |
+| `whitman-leaves.txt` | Walt Whitman, *Leaves of Grass* | 17,435 | `o`, `thee`, `poems`, `pioneers`, `chant` |
 
 The Bible is more than four times the length of *Moby-Dick* and about seventy
 times Blake. Normalized TF is what keeps `unto` from being an accident of
@@ -74,6 +74,21 @@ is ordinary scripture and unusual Austen.
 **Blake** — short file, so a handful of repeated poem-words (`thel`, `weep`,
 `lyca`) get a large TF. `tyger` never appears because the checked-in text
 does not contain that spelling as a standalone token.
+
+**Buster Bear** — `buster` at 0.0404 is the heaviest single weight on the
+shelf. The file is short, the name is unique (`df = 1`), and Burgess
+repeats it constantly. Animal sidekicks (`blacky`, `billy`, `chatterer`)
+fill the rest of the head.
+
+**Chesterton** — each book is dominated by its own surnames: `turnbull` /
+`macian` in *The Ball and the Cross*, `flambeau` in Father Brown, `syme`
+in *Thursday*. That is TF-IDF doing collection-internal contrast: the
+three Chesterton files do not share enough rare vocabulary to cancel
+those names.
+
+**Caesar** — same speaker-tag pattern as Hamlet/Macbeth. `bru` (0.0208)
+and `cassi` (0.0146) outrank `caesar` (0.0073), and `caes` is a separate
+token. `caesar` itself has `df = 8`, so IDF is only `ln(18/8) ≈ 0.811`.
 
 ## Why this shelf is a good TF-IDF demo
 
