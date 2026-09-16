@@ -124,11 +124,18 @@ class CollectionScores:
 
 
 def iter_input_files(input_dir: Path) -> list[Path]:
-    """Non-hidden files, sorted, matching the Perl 'skip names starting with .' rule."""
+    """Non-hidden ``*.txt`` files, sorted by name.
+
+    READMEs and other notes in an example directory are not documents.
+    The original Perl skips only names starting with ``.`` and assumes
+    everything else in ``gutenberg/`` is a text file.
+    """
     files = [
         path
         for path in input_dir.iterdir()
-        if path.is_file() and not path.name.startswith(".")
+        if path.is_file()
+        and not path.name.startswith(".")
+        and path.suffix.lower() == ".txt"
     ]
     return sorted(files, key=lambda path: path.name)
 
@@ -225,14 +232,28 @@ def top_terms(scores: Mapping[str, float], limit: int) -> list[tuple[str, float]
     return ranked[:limit]
 
 
-def read_score_tsv(path: Path) -> dict[str, float]:
-    """Read a two-column term/score TSV (tf, idf, or tfidf)."""
+def read_score_tsv(path: Path, *, skip_bad: bool = True) -> dict[str, float]:
+    """Read a two-column term/score TSV (tf, idf, or tfidf).
+
+    The checked-in ``output/idf.txt`` has one corrupted value
+    (``2.89037175789616y`` on ``thatyou``). ``skip_bad=True`` drops
+    lines that are not a finite float so snapshot ranking still works.
+    """
     scores: dict[str, float] = {}
     with path.open(encoding="utf-8") as handle:
         for raw in handle:
             line = raw.rstrip("\n")
             if not line:
                 continue
+            if "\t" not in line:
+                if skip_bad:
+                    continue
+                raise ValueError(f"not a two-column TSV line: {line!r}")
             term, value = line.split("\t", 1)
-            scores[term] = float(value)
+            try:
+                scores[term] = float(value)
+            except ValueError:
+                if skip_bad:
+                    continue
+                raise
     return scores

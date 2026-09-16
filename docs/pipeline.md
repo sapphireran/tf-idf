@@ -152,9 +152,9 @@ python3 examples/python/compute_tfidf.py \
 ```
 
 That writes `tf/`, `df.txt`, `idf.txt`, and `tfidf/` in the same TSV
-shape. It will not bit-match `output/` (float formatting, document
-order in `df.txt`, possible `word_count` differences). Rankings of the
-distinctive names should still agree.
+shape. It scores only `*.txt` files and will not bit-match `output/`
+(float formatting, document order in `df.txt`, possible `word_count`
+differences). Rankings of the distinctive names should still agree.
 
 ## Related
 

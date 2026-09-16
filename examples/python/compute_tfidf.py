@@ -30,7 +30,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "--input-dir",
         required=True,
         type=Path,
-        help="Directory of documents (non-hidden files only)",
+        help="Directory of documents (non-hidden *.txt files only)",
     )
     parser.add_argument(
         "--output-dir",

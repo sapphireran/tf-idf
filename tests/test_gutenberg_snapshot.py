@@ -17,6 +17,11 @@ class GutenbergSnapshotTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.idf = read_score_tsv(ROOT / "output" / "idf.txt")
 
+    def test_snapshot_skips_the_thatyou_typo(self) -> None:
+        self.assertNotIn("thatyou", self.idf)
+        raw = (ROOT / "output" / "idf.txt").read_text(encoding="utf-8")
+        self.assertIn("thatyou\t2.89037175789616y", raw)
+
     def test_n_is_eighteen_from_ceiling_idf(self) -> None:
         # One-document terms sit at ln(18).
         self.assertAlmostEqual(max(self.idf.values()), math.log(N), places=10)

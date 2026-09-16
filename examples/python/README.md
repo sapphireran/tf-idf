@@ -50,7 +50,8 @@ idf   = ln(N / df)
 tfidf = tf * idf
 ```
 
-`N` is the number of non-hidden files in `--input-dir`. Hidden names
-(`.DS_Store`) are skipped the same way the Perl skips `^\.`.
+`N` is the number of non-hidden `*.txt` files in `--input-dir`.
+`README.md` files next to a toy corpus are notes, not documents.
+Hidden names (`.DS_Store`) are skipped the same way the Perl skips `^\.`.
 
 Full writeup: [../../docs/tf-idf-explained.md](../../docs/tf-idf-explained.md).

@@ -31,6 +31,7 @@ class MicroCorpusTests(unittest.TestCase):
 
     def test_collection_size_is_three(self) -> None:
         self.assertEqual(self.scores.n_docs, 3)
+        self.assertTrue((MICRO / "README.md").is_file())
 
     def test_document_lengths(self) -> None:
         self.assertEqual(self.by_name["d1-cat.txt"].words, 6)

@@ -113,6 +113,19 @@ Adding a nineteenth file changes every IDF. Removing the Bible
 changes Milton and Blake more than it changes Austen. Do not treat
 `output/idf.txt` as a universal English rarity table.
 
+## One corrupted line in the snapshot IDF table
+
+`output/idf.txt` contains a single non-numeric value:
+
+```
+thatyou	2.89037175789616y
+```
+
+That trailing `y` is not part of the formula; it is a snapshot typo.
+`examples/python/top_terms.py` and `read_score_tsv()` skip the line
+rather than rewriting the historical file. Every other IDF row in the
+snapshot parses as a float.
+
 ## Float formatting is not a checksum
 
 Perl and Python will not print identical decimal strings. Compare

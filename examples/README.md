@@ -8,10 +8,13 @@ set is paragraph-length original prose with an obvious three-way split.
 
 ```
 examples/
-  micro-corpus/     three one-line documents (cat / dog / bread)
-  tiny-corpus/      three short original paragraphs (cats / dogs / baking)
-  python/           stdlib TF-IDF + ranker
-  perl/top_terms.pl rank a TSV without CPAN
+  micro-corpus/            three one-line documents (cat / dog / bread)
+  micro-corpus-expected/   teaching-pipeline TSV for the micro set
+  tiny-corpus/             three short original paragraphs
+  tiny-corpus-expected/    teaching-pipeline TSV for the tiny set
+  sample-rankings/         top-8 listings for the tiny set and Gutenberg
+  python/                  stdlib TF-IDF + ranker
+  perl/top_terms.pl        rank a TSV without CPAN
 ```
 
 Hand-computed table for the micro set:

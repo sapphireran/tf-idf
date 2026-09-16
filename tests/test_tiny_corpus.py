@@ -21,6 +21,7 @@ class TinyCorpusTests(unittest.TestCase):
             set(self.by_name),
             {"cats.txt", "dogs.txt", "baking.txt"},
         )
+        self.assertTrue((TINY / "README.md").is_file())
 
     def test_shared_template_words_have_df_of_two(self) -> None:
         # Written into both animal paragraphs on purpose.

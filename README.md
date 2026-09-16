@@ -71,7 +71,8 @@ visible in the Shakespeare and Carroll rankings.
 
 ## Quick start (teaching Python)
 
-The teaching implementation is stdlib-only. From the repository root:
+The teaching implementation is stdlib-only and scores `*.txt` files
+only (so example READMEs are not documents). From the repository root:
 
 ```bash
 python3 examples/python/compute_tfidf.py \
