@@ -59,6 +59,28 @@ If you add or remove a book, **every IDF value changes**, because
 `N` and many `df` counts change. The checked-in `output/` tables
 are only valid for this exact 18-file mix.
 
+## What classic TF-IDF actually surfaces here
+
+From one run of `scripts/tfidf_benchmark.py --top 8` (classic,
+`N = 18`):
+
+- Austen splits cleanly by proper name: `emma` / `harriet`,
+  `elliot` / `wentworth`, `elinor` / `marianne`.
+- Carroll, Melville, and Chesterton's *Thursday* do the same with
+  `alice`, `whale` / `ahab`, `syme`.
+- The Bible's top of the list is function-ish Early Modern English
+  (`unto`, `saith`, `thee`) plus names (`israel`, `david`, `judah`).
+  Those words are common in that file and scarce in Austen.
+- The three Shakespeare files are dominated by **speech prefixes**
+  (`ham`, `macb`, `bru`). The tokenizer does not know they are
+  stage directions, and IDF treats them as rare content words.
+- 221 terms appear in all 18 books and score exactly zero. The
+  interesting ranking is everything else.
+
+Exact per-file token and type counts are printed by the benchmark
+next to each title. They belong there, not copied here, so a
+tokenizer change cannot leave this page stale.
+
 ## What the tokenizer does to these texts
 
 Gutenberg editions include titles, chapter labels, and sometimes

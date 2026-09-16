@@ -87,6 +87,12 @@ that contain each term. `output/idf.txt` has no header, just
 `term<TAB>idf`. `output/df-sorted.txt` is a derived listing that
 these scripts do not regenerate; treat it as a leftover snapshot.
 
+One gold cell is corrupt: `thatyou` is stored as `2.89037175789616y`
+instead of `2.89037175789616` (`ln(18)`). The rest of that line is
+an ordinary singleton-term IDF. The benchmark strips the trailing
+letter when it loads `output/idf.txt` rather than failing the
+whole comparison over a 2012 typo.
+
 ### What the script does not do
 
 - It never writes TF-IDF. That is the second script.
