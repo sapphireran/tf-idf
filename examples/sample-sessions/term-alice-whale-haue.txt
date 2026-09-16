@@ -1,0 +1,36 @@
+term: 'alice'
+  idf: 1.79175946923
+  df:  3  chesterton-thursday.txt, carroll-alice.txt, edgeworth-parents.txt
+
+  document                                     tf          tf-idf
+  carroll-alice.txt                0.0144867549669  0.0259567803903
+  chesterton-thursday.txt          1.72663858001e-05  3.09372102567e-05
+  edgeworth-parents.txt            1.20339115628e-05  2.15618749945e-05
+
+term: 'whale'
+  idf: 1.09861228867
+  df:  6  melville-moby_dick.txt, bible-kjv.txt, whitman-leaves.txt, bryant-stories.txt, shakespeare-hamlet.txt, chesterton-ball.txt
+
+  document                                     tf          tf-idf
+  melville-moby_dick.txt           0.00449970284981  0.00494342884616
+  bryant-stories.txt               0.000345602211854  0.000379682836934
+  shakespeare-hamlet.txt           6.52124294891e-05  7.16431764106e-05
+  chesterton-ball.txt              2.44989955412e-05  2.69148975616e-05
+  whitman-leaves.txt               7.98773084542e-06  8.77541926535e-06
+  bible-kjv.txt                    2.4356649548e-06  2.67585145042e-06
+
+term: 'haue'
+  idf: 1.79175946923
+  df:  3  shakespeare-macbeth.txt, shakespeare-hamlet.txt, shakespeare-caesar.txt
+
+  document                                     tf          tf-idf
+  shakespeare-caesar.txt           0.00692122981308  0.0124011790563
+  shakespeare-macbeth.txt          0.00664126292869  0.0118995457401
+  shakespeare-hamlet.txt           0.00570608758029  0.0102239364542
+
+term: 'macb'
+  idf: 2.8903717579
+  df:  1  shakespeare-macbeth.txt
+
+  document                                     tf          tf-idf
+  shakespeare-macbeth.txt          0.00745781164943  0.0215558481672
