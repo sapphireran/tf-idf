@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import math
+import subprocess
 import sys
 from pathlib import Path
 
@@ -167,6 +168,29 @@ def test_fifth_document_breaks_the_cat_fish_tie() -> None:
     assert "kitten" in after["tfidf"]["more-cats.txt"]
 
 
+def test_run_toy_example_cli() -> None:
+    proc = subprocess.run(
+        [sys.executable, str(Path(__file__).resolve().parent / "run_toy_example.py")],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert "N documents: 4" in proc.stdout
+    assert "cat            0.138629436112" in proc.stdout
+    assert "fish           0.138629436112" in proc.stdout
+
+
+def test_add_a_document_cli() -> None:
+    proc = subprocess.run(
+        [sys.executable, str(Path(__file__).resolve().parent / "add_a_document.py")],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    assert "tie broken" in proc.stdout
+    assert "cat now leads" in proc.stdout
+
+
 def main() -> int:
     tests = [
         test_tokenizer_is_a_noop_on_the_toy_lines,
@@ -175,6 +199,8 @@ def main() -> int:
         test_empty_field_changes_only_the_faithful_denominator,
         test_cats_are_closer_to_pets_than_to_space,
         test_fifth_document_breaks_the_cat_fish_tie,
+        test_run_toy_example_cli,
+        test_add_a_document_cli,
     ]
     for fn in tests:
         fn()

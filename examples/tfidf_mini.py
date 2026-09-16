@@ -158,3 +158,10 @@ def pairwise_cosine(
             pairs.append((left, right, cosine(vectors[left], vectors[right])))
     pairs.sort(key=lambda item: (-item[2], item[0], item[1]))
     return pairs
+
+
+def format_float(value: float) -> str:
+    if value == 0:
+        return "0"
+    return f"{value:.12g}"
+
