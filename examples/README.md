@@ -71,3 +71,9 @@ term). They read `output/` but never write it.
   the walkthroughs.
 - Not company or client code. The corpus is public-domain NLTK
   Gutenberg extracts plus original toy sentences.
+
+On the committed Gutenberg vectors, cosine ranks Shakespeare plays
+together and ranks each Austen novel nearer Edgeworth than the other
+Austens. Unique character names are strong labels and weak
+same-author features. The walkthroughs call that out instead of
+pretending authorship clustering falls out for free.

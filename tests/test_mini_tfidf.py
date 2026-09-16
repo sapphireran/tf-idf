@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import io
 import math
 import sys
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -92,14 +94,17 @@ class ThreeDocsTests(unittest.TestCase):
         pairs = {(left, right): score for left, right, score in pairwise_cosine(self.model)}
         close = pairs[("the_bird.txt", "the_song.txt")]
         mid = pairs[("the_harbor.txt", "the_song.txt")]
-        far = pairs[("the_harbor.txt", "the_bird.txt")]
+        far = pairs[("the_bird.txt", "the_harbor.txt")]
         self.assertGreater(close, mid)
         self.assertGreater(mid, far)
         self.assertGreater(mid, 0.0)
         self.assertEqual(far, 0.0)
 
     def test_cli_exits_zero(self) -> None:
-        self.assertEqual(mini_main([str(THREE_DOCS), "--top", "5"]), 0)
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertEqual(mini_main([str(THREE_DOCS), "--top", "5"]), 0)
+        self.assertIn("the_harbor.txt", buf.getvalue())
 
 
 class VariantTests(unittest.TestCase):
@@ -145,6 +150,7 @@ class GutenbergTableTests(unittest.TestCase):
     def test_unique_terms_use_ln_18(self) -> None:
         self.assertAlmostEqual(self.idf["moby"], math.log(18), places=12)
         self.assertAlmostEqual(self.idf["macbeth"], math.log(18), places=12)
+        self.assertAlmostEqual(self.idf["thatyou"], math.log(18), places=12)
 
     def test_alice_product_matches_tf_times_idf(self) -> None:
         self.assertAlmostEqual(
@@ -157,18 +163,33 @@ class GutenbergTableTests(unittest.TestCase):
         self.assertEqual(rank_score_map(self.alice, top=1)[0][0], "alice")
 
     def test_rank_and_follow_clis(self) -> None:
-        self.assertEqual(
-            rank_main(["--input-dir", str(ROOT / "output" / "tfidf"), "--only", "carroll-alice.txt", "--top", "5"]),
-            0,
-        )
-        self.assertEqual(follow_main(["alice", "--output-dir", str(ROOT / "output")]), 0)
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertEqual(
+                rank_main(["--input-dir", str(ROOT / "output" / "tfidf"), "--only", "carroll-alice.txt", "--top", "5"]),
+                0,
+            )
+            self.assertEqual(follow_main(["alice", "--output-dir", str(ROOT / "output")]), 0)
+        out = buf.getvalue()
+        self.assertIn("alice", out)
+        self.assertIn("gryphon", out)
 
     def test_gutenberg_cosine_clusters_austen(self) -> None:
         names, vectors = load_output_vectors(ROOT / "output" / "tfidf")
-        pairs = {(left, right): score for left, right, score in pairs_from_vectors(names, vectors)}
+        ranked = pairs_from_vectors(names, vectors)
+        pairs = {(left, right): score for left, right, score in ranked}
         austen = pairs[("austen-emma.txt", "austen-sense.txt")]
         mixed = pairs[("austen-emma.txt", "melville-moby_dick.txt")]
         self.assertGreater(austen, mixed)
+        # Shared Folio leftovers beat same-author character names.
+        self.assertEqual(
+            ranked[0][:2],
+            ("shakespeare-hamlet.txt", "shakespeare-macbeth.txt"),
+        )
+        self.assertGreater(
+            pairs[("austen-persuasion.txt", "edgeworth-parents.txt")],
+            pairs[("austen-emma.txt", "austen-sense.txt")],
+        )
 
 
 class CosineUnitTests(unittest.TestCase):

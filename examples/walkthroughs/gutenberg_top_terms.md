@@ -199,5 +199,18 @@ book is long and the distinctive words are spread out.
 
 Pairwise cosine on these same vectors is
 `python3 examples/cosine_similarity.py --from-output output/tfidf --top-pairs 15`.
-Austen triples and Shakespeare triples should occupy the top of that
-list; Bible vs Burgess should sit at the bottom.
+
+What actually sits at the top is shared *register*, not shared
+authorship:
+
+| Pair | Cosine | Why |
+| --- | ---: | --- |
+| hamlet – macbeth | 0.308 | Folio tags and spellings |
+| paradise – leaves | 0.265 | `thee` / `thou` / vocatives |
+| caesar – hamlet | 0.253 | same as the other plays |
+| persuasion – edgeworth | 0.119 | `mrs` / `mr` period address |
+| emma – sense | 0.067 | same author, different names |
+| buster – caesar | 0.0002 | almost no shared rare tokens |
+
+Character-name TF-IDF is excellent for labeling a *single* book and
+mediocre for clustering authors. The walkthroughs keep both lessons.

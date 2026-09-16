@@ -43,16 +43,15 @@ to the Gutenberg filenames.
 
 | File | About |
 | --- | --- |
-| `alice.txt` | Carroll opening + the rabbit |
-| `ishmael.txt` | Melville opening + a whale |
+| `alice.txt` | Alice + the white rabbit (name repeated so it beats `by`-style glue) |
+| `ishmael.txt` | Ishmael + a whale |
 | `hamlet.txt` | The soliloquy's first two lines |
 
-This one is for qualitative checks: `alice` and `rabbit` should rise in
-the first file, `ishmael` / `whale` in the second, `nobler` / `suffer`
-in the third. `the` should still be zero if it appears in all three
-snippets (it does). `to` appears twice in Hamlet's first line and in no
-other snippet, so it will look "distinctive" — a useful reminder that
-TF-IDF is not a literary critic.
+This one is for qualitative checks: `alice` should be first in the
+Alice file, `ishmael` / `whale` should rise in the second, `nobler` /
+`question` in the third. `the` is still zero (`df = 3`). `to` appears
+twice in Hamlet's first line and in no other snippet, so it will look
+"distinctive" — a useful reminder that TF-IDF is not a literary critic.
 
 Full token tables are printed by `mini_tfidf.py`; there is no separate
 gold file beyond the three-docs unit tests.

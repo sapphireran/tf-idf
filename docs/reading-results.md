@@ -87,17 +87,26 @@ sparse TF-IDF vectors *is* a reasonable next step; it cancels magnitude
 and asks "do these books emphasize the same rare words?"
 
 `examples/cosine_similarity.py` does that for the mini-corpus and can
-point at `output/tfidf` for a Gutenberg pairwise table. Expect:
+point at `output/tfidf` for a Gutenberg pairwise table. On the
+committed run the top pairs are **not** "same author":
 
-- Austen's three novels to be closer to each other than any of them is
-  to *Moby-Dick*.
-- The three Shakespeare files to cluster, partly because they share
-  `haue` / `vs` / `thee`.
-- The Bible to sit far from the children's books.
+- Shakespeare plays cluster first (`hamlet`–`macbeth` 0.31). They
+  share Folio leftovers (`haue`, `vs`, `thee`) and speech-prefix
+  shapes.
+- Milton, Whitman, Blake, and the KJV form a second clump of Early
+  Modern / vocative diction (`thee`, `thou`, `o`).
+- Each Austen novel is closer to Edgeworth (`mrs`, `mr`) than the
+  three Austen files are to each other. Character names dominate
+  TF-IDF and do not overlap, so *Emma* and *Sense and Sensibility*
+  look like different books — which they are, token-wise.
+- Burgess vs any Shakespeare play is ~0.0002–0.0005, the floor of
+  the table.
 
-Those similarities are still bag-of-tokens similarities. *Emma* and
-*Persuasion* look related because of shared function-ish leftovers and
-period diction, not because the script knows they are both Austen.
+Those similarities are still bag-of-tokens similarities. The script
+does not know two files are "both Austen"; it knows they share rare
+tokens. Unique names are rare *and* unshared, so they push
+same-author novels apart. That is a feature of this weighting, not
+a bug in the cosine code.
 
 ## A checklist before you trust a top term
 

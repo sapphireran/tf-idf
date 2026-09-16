@@ -112,6 +112,16 @@ not care about *how often* the other document used it. That is standard.
 split is ordinary TSV; the example Python reads the same files with
 `str.split("\t")`. You do not need Perl to study the committed output.
 
+## One dirty cell in `output/idf.txt`
+
+Line 50450 is `thatyou<TAB>2.89037175789616y`. Every other IDF value
+in the file is a clean float. The leading digits are still \(\ln 18\),
+so the term was a unique token whose score grew a stray `y` at some
+point in 2012. The example TSV reader (`parse_number` in
+`examples/tfidf_lib.py`) accepts that one row and does not rewrite the
+57k-line file. If you regenerate IDF from scratch, the `y` will
+disappear — along with whatever \(N\) the Perl `$#files` line computes.
+
 ## Regenerating `output/` is a large diff
 
 `output/idf.txt` is 57k lines; the TF-IDF files together are a few

@@ -181,6 +181,24 @@ def pairwise_cosine(model: TfidfModel) -> List[Tuple[str, str, float]]:
     return pairs
 
 
+_LEADING_FLOAT = re.compile(r"^[+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?")
+
+
+def parse_number(value: str) -> float:
+    """Parse a TSV score, tolerating the one dirty 2012 IDF cell.
+
+    ``output/idf.txt`` has a single corrupted row, ``thatyou`` →
+    ``2.89037175789616y``. The leading float is still ln(18).
+    """
+    try:
+        return float(value)
+    except ValueError:
+        match = _LEADING_FLOAT.match(value)
+        if match is None:
+            raise
+        return float(match.group(0))
+
+
 def parse_tsv_scores(path: Path) -> Dict[str, float]:
     """Read a ``term<TAB>number`` file like output/tf or output/tfidf."""
     scores: Dict[str, float] = {}
@@ -190,7 +208,7 @@ def parse_tsv_scores(path: Path) -> Dict[str, float]:
         term, value = line.split("\t", 1)
         if term == "word" or term.startswith("word "):
             continue
-        scores[term] = float(value)
+        scores[term] = parse_number(value)
     return scores
 
 
