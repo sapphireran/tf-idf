@@ -96,7 +96,8 @@ The calculator writes `examples/tiny-corpus/output/` in the same tf / df / idf /
 3. [docs/pipeline.md](docs/pipeline.md) — line-level tour of the two Perl scripts, including the \(N\) quirk.
 4. [docs/corpus.md](docs/corpus.md) — the eighteen books and known ranking artifacts.
 5. [docs/interpreting-results.md](docs/interpreting-results.md) — how to read `output/tfidf` for Alice, *Moby-Dick*, *Hamlet*, *Emma*, and Blake.
-6. [docs/idf-variants.md](docs/idf-variants.md) — raw `ln(N/df)` vs smoothed / probabilistic / BM25-style idf.
+6. [docs/gutenberg-top-terms.md](docs/gutenberg-top-terms.md) — top 10 terms for all 18 files, generated from the snapshot.
+7. [docs/idf-variants.md](docs/idf-variants.md) — raw `ln(N/df)` vs smoothed / probabilistic / BM25-style idf.
 7. [examples/tiny-corpus/README.md](examples/tiny-corpus/README.md) — the five-document collection and expected top terms.
 
 ## Known quirks (worth reading before you trust a number)

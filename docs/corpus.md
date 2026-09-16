@@ -51,7 +51,7 @@ The files are already Gutenberg-style plain text with a one-line title header on
 2. **Morphological twins.** `whale` / `whales`, `elton` / `eltons`. No stemmer, so both survive.
 3. **Format artifacts.** Shakespeare speaker tags (`ham`, `hor`, `laer`), First Folio spelling (`haue`, `selfe`), honorifics that Austen uses constantly (`mr`, `mrs`). They are mathematically correct and narratively misleading.
 
-[docs/interpreting-results.md](interpreting-results.md) walks ranked lists for five of the files with these three buckets labeled.
+[docs/interpreting-results.md](interpreting-results.md) walks ranked lists for five of the files with these three buckets labeled. [docs/gutenberg-top-terms.md](gutenberg-top-terms.md) lists the top 10 for every file.
 
 ## Suggested reading order
 
